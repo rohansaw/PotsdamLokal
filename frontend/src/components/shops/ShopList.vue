@@ -5,8 +5,13 @@
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>
       <div v-else>
-        <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
-          von {{ pager.totalItems }} Ergebnissen<br></p>
+        <b-row>
+          <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
+            von {{ pager.totalItems }} Ergebnissen<br></p>
+          <div class="orderBySelection text-right">
+            Karten-Ansicht | Order by
+          </div>
+        </b-row>
         <shopItem
           v-for="project in pageOfProjects"
           :key="project.id"

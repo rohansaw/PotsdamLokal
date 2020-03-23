@@ -51,6 +51,29 @@
               />
             </b-form-group>
 
+            <b-form-group
+              id="form-adress"
+              label="Adresse:"
+              label-for="form-desc"
+              >
+              <b-col>
+                <b-form-input
+                  id="form-plz"
+                  v-model="form.adress.plz"
+                  required
+                  placeholder="PLZ..."
+                />
+              </b-col>
+              <b-col>
+                <b-form-input
+                  id="form-straße"
+                  v-model="form.adress.street"
+                  required
+                  placeholder="Straße und Hausnummer..."
+                />
+              </b-col>
+            </b-form-group>
+
             <b-form-checkbox class="mb-4">Wir liefern auch</b-form-checkbox>
 
           </div>
@@ -77,7 +100,10 @@ export default {
         branch: '',
         categories: [],
         description: '',
-        adress: '',
+        adress: {
+          plz: null,
+          street: ''
+        },
         delivers: false
       },
       show: true,

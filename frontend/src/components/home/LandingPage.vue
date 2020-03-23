@@ -3,8 +3,10 @@
     <b-jumbotron class="bg-image mb-0">
       <b-container>
         <h1 class="display-3">PotsdamLokal - Einkaufen</h1>
-        <p class="lead">Unterstütze jetzt den lokalen Einzelhandel in Potsdam</p>
-        <h3>In Zeiten von Covid19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in kontakt treten und Zeitslots zum abholen der Produkte ausmachen oder auch Produkte liefern lassen</h3>
+        <p class="lead">Unterstütze jetzt den lokalen Einzelhandel in Potsdam!</p>
+        <h3>In Zeiten von Covid19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in Kontakt treten und Zeitslots zum Abholen der Produkte ausmachen oder euch Produkte liefern lassen</h3>
+        <div class="text-center">
+        </div>
       </b-container>
     </b-jumbotron>
     <b-container fluid>
@@ -14,14 +16,16 @@
             to="shops"
             class="selection-button"
             tag="button">Für Käufer</router-link>
-          <br><br>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam
+          <br><br><p>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam</p>
+          <img src="../../assets/shoppingCart.svg" class="intro-image mt-5"/>
         </b-col>
         <b-col class="select-activists text-center">
           <router-link
             to="create-shop"
             class="selection-button"
             tag="button">Für Verkäufer</router-link>
-          <br><br>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden
+          <br><br><p>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden</p>
+           <img src="../../assets/shop.svg" class="intro-image"/>
         </b-col>
       </b-row>
       <div id="Info-container"/>
@@ -33,7 +37,7 @@
 .bg-image{
   border-radius: 0px;
   color: #ecf0f1;
-  height: 500px;
+  height: 40vh;
   background-color: #ED8182 !important;
 }
 #Selection-row{
@@ -50,6 +54,9 @@
   background-color: #a9d4f8;
 }
 #Info-container{
-  min-height: 400px;
+  min-height: 300px;
+}
+.intro-image{
+  height: 25vh;
 }
 </style>

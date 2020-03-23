@@ -12,7 +12,6 @@
   </div>
 </template>
 
-<!-- Später dynamisch nach Einträgen aus der Datenbank anzeigen -->
 <script>
 import filterItem from './FilterItem'
 import RepositoryFactory from '../../repositories/RepositoryFactory'

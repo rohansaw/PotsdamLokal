@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
 label{
-    font-weight: 600;
+    font-size: 1.2em;
 }
 </style>
