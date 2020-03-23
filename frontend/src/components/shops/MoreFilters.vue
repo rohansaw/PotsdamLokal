@@ -3,13 +3,13 @@
     <ul class="filtersList">
       <filterItem
         :id="1"
-        :name="'Meine gespeicherten Interessen zur Suche nutzen'"/>
+        :name="'Nur Geschäfte, die Liefern anzeigen'"/>
       <filterItem
         :id="2"
-        :name="'Meine gespeicherten Fähigkeiten zur Suche nutzen'"/>
+        :name="'Nur verifizierte Geschäfte anzeigen'"/>
       <filterItem
         :id="3"
-        :name="'Projekte von Organisationen ausblenden'"/>
+        :name="'Nur Geschäfte anzeigen, die heute geöffnet haben'"/>
     </ul>
   </div>
 </template>

@@ -33,11 +33,10 @@
               label-for="form-branch">
               <b-form-select
                 id="form-branch"
-                class="mb-2 mr-sm-2 mb-sm-0"
                 :options="branches"
                 :value="null"
-              />
-            </b-form-group>
+                class="mb-2 mr-sm-2 mb-sm-0"
+            /></b-form-group>
 
             <b-form-group
               id="form-desc"
@@ -50,6 +49,29 @@
                 rows="3"
                 max-rows="6"
               />
+            </b-form-group>
+
+            <b-form-group
+              id="form-adress"
+              label="Adresse:"
+              label-for="form-desc"
+            >
+              <b-col>
+                <b-form-input
+                  id="form-plz"
+                  v-model="form.adress.plz"
+                  required
+                  placeholder="PLZ..."
+                />
+              </b-col>
+              <b-col>
+                <b-form-input
+                  id="form-straße"
+                  v-model="form.adress.street"
+                  required
+                  placeholder="Straße und Hausnummer..."
+                />
+              </b-col>
             </b-form-group>
 
             <b-form-checkbox class="mb-4">Wir liefern auch</b-form-checkbox>
@@ -67,8 +89,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import router from '../../router'
+import RepositoryFactory from '../../repositories/RepositoryFactory'
+const shopsRepository = RepositoryFactory.get('shops')
 
 export default {
   data () {
@@ -78,7 +100,10 @@ export default {
         branch: '',
         categories: [],
         description: '',
-        adress: '',
+        adress: {
+          plz: null,
+          street: ''
+        },
         delivers: false
       },
       show: true,
@@ -86,20 +111,12 @@ export default {
     }
   },
   mounted () {
-    axios.get('/api/branches')
-      .then(res => this.branches = res.data)
+    this.branches = shopsRepository.getBranches()
   },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      axios.post('/api/createProject', this.form)
-        .then((response) => {
-          console.log('Project Added')
-          router.push('/projects')
-        })
-        .catch((errors) => {
-          console.log('Could not add Project')
-        })
+      shopsRepository.postNewShop(this.form)
     }
   }
 }

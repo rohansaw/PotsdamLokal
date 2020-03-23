@@ -6,7 +6,8 @@
       <input
         id="id"
         type="checkbox"
-        value="id">
+        value="id"
+        @input="$emit('input', $event.target.value)">
       {{ name }}
     </label>
   </li>
@@ -16,13 +17,13 @@
 export default {
   props: {
     id: Number,
-    name: String
+    name: String,
   }
 }
 </script>
 
 <style scoped>
 label{
-    font-weight: 600;
+    font-size: 1.2em;
 }
 </style>

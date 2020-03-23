@@ -8,7 +8,7 @@
           <div class="row">
             <div
               class="col-md-4 filter-item"
-              @click="toggleFilterMenu('interests')">
+              @click="toggleFilterMenu('branches')">
               <font-awesome-icon
                 class="icon-padded"
                 icon="pencil-ruler" />
@@ -19,7 +19,7 @@
             </div>
             <div
               class="col-md-4 filter-item"
-              @click="toggleFilterMenu('skills')">
+              @click="toggleFilterMenu('categories')">
               <font-awesome-icon
                 class="icon-padded"
                 icon="heart" />
@@ -49,8 +49,8 @@
         v-if="selectedFilterMenu!=''"
         class="dropdown-filters">
         <b-container>
-          <branchFilters v-if="selectedFilterMenu==='interests'"/>
-          <categoryFilters v-if="selectedFilterMenu==='skills'"/>
+          <branchFilters v-if="selectedFilterMenu==='branches'" v-on:branchSelected="branches.push($event)"/>
+          <categoryFilters v-if="selectedFilterMenu==='categories'"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
       </div>
@@ -65,16 +65,21 @@ import moreFilters from './MoreFilters'
 import searchBar from './SearchBar'
 
 export default {
+  data () {
+    return {
+      selectedFilterMenu: '',
+      search: {
+        branches: null,
+        categories: null,
+        text: null
+      }
+    }
+  },
   components: {
     branchFilters,
     categoryFilters,
     moreFilters,
     searchBar
-  },
-  data () {
-    return {
-      selectedFilterMenu: ''
-    }
   },
   methods: {
     toggleFilterMenu: function (type) {
@@ -83,7 +88,9 @@ export default {
       } else {
         this.selectedFilterMenu = ''
       }
-    }
+    },
+
+
   }
 }
 </script>
