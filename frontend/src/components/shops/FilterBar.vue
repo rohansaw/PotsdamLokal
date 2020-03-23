@@ -5,12 +5,12 @@
                 <b-col id="filters">
                     <div class="row">
                         <div v-on:click="toggleFilterMenu('interests')" class="col-md-4 filter-item">
-                            <font-awesome-icon class="icon-padded" icon="heart" />
+                            <font-awesome-icon class="icon-padded" icon="pencil-ruler" />
                             Branche
                             <font-awesome-icon class="ml-auto" icon="angle-down" />
                         </div>
                         <div v-on:click="toggleFilterMenu('skills')"  class="col-md-4 filter-item">
-                            <font-awesome-icon class="icon-padded" icon="pencil-ruler" />
+                            <font-awesome-icon class="icon-padded" icon="heart" />
                             Kategorien
                             <font-awesome-icon class="ml-auto" icon="angle-down" />
                         </div>
