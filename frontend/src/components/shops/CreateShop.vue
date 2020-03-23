@@ -33,17 +33,11 @@
               label-for="form-branch">
               <b-form-select
                 id="form-branch"
-                <<<<<<<
-                head
-                :options="[{ text: 'Auswählen...', value: null }, 'Bücher & Papetrie', 'Design & Geschenkartikel', 'Baby & Kind', 'Mode & Accesoirs', 'Möbel & Interiuer', 'Lebensmittel', 'Hobby & Freizeit', 'Schmuck', 'Parfümerie & Kosmetik', 'Apotheke']"
-                =======
                 class="mb-2 mr-sm-2 mb-sm-0"
                 :options="branches"
-              >>>>>>> 9c4ab1f6474f858cf0b7d8209e791779e768932f
-              :value="null"
-              class="mb-2 mr-sm-2 mb-sm-0"
+                :value="null"
               />
-            </b-form-select></b-form-group>
+            </b-form-group>
 
             <b-form-group
               id="form-desc"
@@ -106,8 +100,7 @@ export default {
         .catch((errors) => {
           console.log('Could not add Project')
         })
-    },
-    show: true
+    }
   }
 }
 </script>
