@@ -7,11 +7,27 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faMapMarkerAlt, faPencilRuler, faHeart, faAngleDown, faEllipsisH, faSearch, faTag} from '@fortawesome/free-solid-svg-icons'
+import {
+  faMapMarkerAlt,
+  faPencilRuler,
+  faHeart,
+  faAngleDown,
+  faEllipsisH,
+  faSearch,
+  faTag
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.use(BootstrapVue)
-library.add(faMapMarkerAlt, faPencilRuler, faHeart, faAngleDown, faEllipsisH, faSearch, faTag)
+library.add(
+  faMapMarkerAlt,
+  faPencilRuler,
+  faHeart,
+  faAngleDown,
+  faEllipsisH,
+  faSearch,
+  faTag
+)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

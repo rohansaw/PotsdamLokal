@@ -1,21 +1,27 @@
 <template>
-    <div id="MoreFilters">
-        <ul class="filtersList">
-            <filterItem :id=1 :name="'Meine gespeicherten Interessen zur Suche nutzen'"/>
-            <filterItem :id=2 :name="'Meine gespeicherten Fähigkeiten zur Suche nutzen'"/>
-            <filterItem :id=3 :name="'Projekte von Organisationen ausblenden'"/>
-        </ul>
-    </div>
+  <div id="MoreFilters">
+    <ul class="filtersList">
+      <filterItem
+        :id="1"
+        :name="'Meine gespeicherten Interessen zur Suche nutzen'"/>
+      <filterItem
+        :id="2"
+        :name="'Meine gespeicherten Fähigkeiten zur Suche nutzen'"/>
+      <filterItem
+        :id="3"
+        :name="'Projekte von Organisationen ausblenden'"/>
+    </ul>
+  </div>
 </template>
 
 <!-- Später dynamisch nach Einträgen aus der Datenbank anzeigen -->
 <script>
-import filterItem from "./FilterItem"
+import filterItem from './FilterItem'
 export default {
-    components:{
-        filterItem
-    }
-    
+  components: {
+    filterItem
+  }
+
 }
 </script>
 

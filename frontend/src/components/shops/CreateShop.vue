@@ -9,44 +9,57 @@
     </b-jumbotron>
 
     <b-container class="mt-5">
-      <b-form @submit="onSubmit" v-if="show">
+      <b-form
+        v-if="show"
+        @submit="onSubmit">
 
         <template>
-    <div>
-        <b-form-group id="form-name" label="Name des Unternehmens" label-for="form-name">
-            <b-form-input
+          <div>
+            <b-form-group
+              id="form-name"
+              label="Name des Unternehmens"
+              label-for="form-name">
+              <b-form-input
                 id="form-name"
                 v-model="form.name"
                 required
                 placeholder="Name..."
-            ></b-form-input>
-        </b-form-group>
+              />
+            </b-form-group>
 
-        <b-form-group id="form-branch" label="Branche des Unternehmens" label-for="form-branch">
-            <b-form-select
+            <b-form-group
+              id="form-branch"
+              label="Branche des Unternehmens"
+              label-for="form-branch">
+              <b-form-select
                 id="form-branch"
-                class="mb-2 mr-sm-2 mb-sm-0"
                 :options="[{ text: 'Auswählen...', value: null }, 'Bücher & Papetrie', 'Design & Geschenkartikel', 'Baby & Kind', 'Mode & Accesoirs', 'Möbel & Interiuer', 'Lebensmittel', 'Hobby & Freizeit', 'Schmuck', 'Parfümerie & Kosmetik', 'Apotheke']"
                 :value="null"
-            ></b-form-select>
-        </b-form-group>
+                class="mb-2 mr-sm-2 mb-sm-0"
+              />
+            </b-form-group>
 
-        <b-form-group id="form-desc" label="Beschreibung" label-for="form-desc">
-            <b-form-textarea
+            <b-form-group
+              id="form-desc"
+              label="Beschreibung"
+              label-for="form-desc">
+              <b-form-textarea
                 id="form-desc"
                 v-model="description"
                 placeholder="Beschreibung sie hier kurz ihr Unternehmen..."
                 rows="3"
                 max-rows="6"
-            ></b-form-textarea>
-        </b-form-group>
+              />
+            </b-form-group>
 
-         <b-form-checkbox class="mb-4">Wir liefern auch</b-form-checkbox>
-         
-    </div>
-</template>
+            <b-form-checkbox class="mb-4">Wir liefern auch</b-form-checkbox>
 
-        <b-button type="submit" variant="primary">Seite erstellen</b-button>
+          </div>
+        </template>
+
+        <b-button
+          type="submit"
+          variant="primary">Seite erstellen</b-button>
 
       </b-form>
     </b-container>
@@ -54,44 +67,44 @@
 </template>
 
 <script>
-import axios from "axios"
-import router from "../../router"
+import axios from 'axios'
+import router from '../../router'
 
-  export default {
-    data() {
-      return {
-        form: {
-          name: "",
-          branch: "",
-          categories: [],
-          description: "",
-          adress: "",
-          delivers: false,
-        },
-        show: true
-      }
-    },
-    methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        axios.post("/api/createProject", this.form)    
-            .then((response) => {    
-                console.log("Project Added")    
-                router.push("/projects")    
-            })    
-            .catch((errors) => {    
-                console.log("Could not add Project")    
-            })    
+export default {
+  data () {
+    return {
+      form: {
+        name: '',
+        branch: '',
+        categories: [],
+        description: '',
+        adress: '',
+        delivers: false
       },
+      show: true
+    }
+  },
+  methods: {
+    onSubmit (evt) {
+      evt.preventDefault()
+      axios.post('/api/createProject', this.form)
+        .then((response) => {
+          console.log('Project Added')
+          router.push('/projects')
+        })
+        .catch((errors) => {
+          console.log('Could not add Project')
+        })
     }
   }
+}
 </script>
 
 <style scoped>
 .bg-image{
-    border-radius: 0px;
-    color: #ecf0f1;
-    height: 200px;
-    background-color: #ED8182;
+  border-radius: 0px;
+  color: #ecf0f1;
+  height: 200px;
+  background-color: #ED8182;
 }
 </style>

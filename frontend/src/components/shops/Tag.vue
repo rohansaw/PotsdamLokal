@@ -1,15 +1,15 @@
 <template>
-    <div class="tag">
-        <font-awesome-icon  icon="tag" />
-        {{name}}
-    </div>
+  <div class="tag">
+    <font-awesome-icon icon="tag" />
+    {{ name }}
+  </div>
 </template>
 
 <script>
 export default {
-    props:{
-        name: String
-    }
+  props: {
+    name: String
+  }
 }
 </script>
 
