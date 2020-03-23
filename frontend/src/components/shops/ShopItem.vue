@@ -34,7 +34,7 @@
 
 <script>
 import tag from "./Tag"
-import skillTag from "./SkillTag"
+import skillTag from "./CategoryTag"
 
 export default {
     props: {

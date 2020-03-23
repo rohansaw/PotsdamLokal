@@ -27,8 +27,8 @@
         <transition name="dropmenu">
             <div v-if="selectedFilterMenu!=''" class="dropdown-filters">
                 <b-container>
-                   <interestFilters v-if="selectedFilterMenu==='interests'"/>
-                    <skillFilters v-if="selectedFilterMenu==='skills'"/>
+                   <branchFilters v-if="selectedFilterMenu==='interests'"/>
+                    <categoryFilters v-if="selectedFilterMenu==='skills'"/>
                     <moreFilters v-if="selectedFilterMenu==='more'"/> 
                 </b-container>
             </div>
@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import interestFilters from "./InterestFilters"
-import skillFilters from "./SkillsFilter"
+import branchFilters from "./BranchFilters"
+import categoryFilters from "./CategoryFilters"
 import moreFilters from "./MoreFilters"
 import searchBar from "./SearchBar"
 
@@ -49,8 +49,8 @@ export default {
         }
     },
     components: {
-        interestFilters,
-        skillFilters,
+        branchFilters,
+        categoryFilters,
         moreFilters,
         searchBar
     },

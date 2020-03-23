@@ -1,14 +1,14 @@
 <template>
     <div id="Navigation">
         <b-navbar class="padded-nav" toggleable="lg" type="light">
-            <b-navbar-brand to="/">KollektivAktiv</b-navbar-brand>
+            <b-navbar-brand to="/">PotsdamLokal</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-                <b-nav-item to="projects">Projekte finden</b-nav-item>
-                <b-nav-item to="profiles">Aktivist:innen suchen</b-nav-item>
+                <b-nav-item to="shops">Einkaufen</b-nav-item>
+                <b-nav-item to="create-shop">Anbieten</b-nav-item>
                 <b-nav-item to="faq">FAQ</b-nav-item>
             </b-navbar-nav>
 

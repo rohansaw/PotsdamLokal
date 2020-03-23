@@ -2,20 +2,20 @@
   <b-container>
     <b-form @submit="onSubmit" v-if="show">
       <b-form-group
-        id="title"
-        label="Titel:"
-        label-for="title"
-        description="Gebe hier den Titel deines Projekts ein.">
+        id="name"
+        label="Name"
+        label-for="name"
+        description="Gebe hier den Name deines Geschäfts ein.">
             <b-form-input
-            id="title"
+            id="name"
             v-model="form.title"
             type="text"
             required
-            placeholder="Titel"
+            placeholder="Name"
             ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary">Seite erstellen</b-button>
     </b-form>
   </b-container>
 </template>

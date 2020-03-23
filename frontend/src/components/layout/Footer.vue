@@ -3,7 +3,7 @@
         <b-container class="align-middle text-center">
             <b-row class="p-4">
                 <b-col>
-                    <h4>Kollektiv Aktiv</h4>
+                    <h4>PotsdamLokal</h4>
                     Footer menu hier
 
                 </b-col>

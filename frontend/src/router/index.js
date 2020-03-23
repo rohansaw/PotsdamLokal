@@ -3,8 +3,8 @@ import Router from "vue-router"
 import Login from "@/components/login/Login"
 import Dashboard from "@/components/home/Dashboard"
 import StartPage from "@/views/StartPage"
-import ProjectsOverview from "@/views/ProjectsOverview"
-import ProjectCreationForm from "@/components/projects/CreateProject"
+import ShopsOverview from "@/views/ShopsOverview"
+import ShopCreationForm from "@/components/shops/CreateShop"
 
 Vue.use(Router)
 const router = new Router({
@@ -15,9 +15,9 @@ const router = new Router({
       component: StartPage
     },
     {
-      path: "/projects",
-      name: "Projects",
-      component: ProjectsOverview
+      path: "/shops",
+      name: "Shops",
+      component: ShopsOverview
     },
     {
       path: "/login",
@@ -30,9 +30,9 @@ const router = new Router({
       component: Dashboard
     },
     {
-      path: "/create-project",
-      name: "CreateProject",
-      component: ProjectCreationForm
+      path: "/create-shop",
+      name: "CreateShop",
+      component: ShopCreationForm
     },
   ],
 })

@@ -6,20 +6,20 @@
         </b-jumbotron>
         <!-- bar, die oben andockt: Searchbox, Causes (Mit icons?), skills (option: use my profile), loction, mehr(NGO/Privat) -->
         <filterbar/>
-        <projectslist/>
+        <shopslist/>
     </div>
 </template>
 
 <script>
-import projectslist from '../components/projects/ProjectsList'
-import filterbar from '../components/projects/FilterBar'
+import shopslist from '../components/shops/ShopList'
+import filterbar from '../components/shops/FilterBar'
 
 export default {
     data: {
 
     },
     components: {
-        projectslist,
+        shopslist,
         filterbar
     }
 }

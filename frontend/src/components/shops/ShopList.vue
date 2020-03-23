@@ -2,12 +2,12 @@
     <div id="ProjectsList">
         <b-container>  
             <div v-if="!pageOfProjects.length" >
-                <h5>Zurzeit leider keine Projekte, die zur deiner Suche passen :(</h5>
+                <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
             </div>
             <div v-else>
                 <p class="text-left">Zeige {{(parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1}} - {{parseInt(pager.currentPage)*parseInt(pager.pageSize)}} 
                     von {{pager.totalItems}} Ergebnissen<br></p>
-                <projectItem  v-for="project in pageOfProjects" :key="project.id" :title="project.title"/>
+                <shopItem  v-for="project in pageOfProjects" :key="project.id" :title="project.title"/>
                 <pagination :pager="pager"/>
             </div>
         </b-container>
@@ -16,7 +16,7 @@
 
 <script>
 import axios from "axios";
-import projectItem from "./ProjectItem"
+import shopItem from "./ShopItem"
 import pagination from "./Pagination"
 
 export default {
@@ -27,7 +27,7 @@ export default {
         }
     },
     components: {
-        projectItem,
+        shopItem,
         pagination
     },
     watch: {

@@ -10,11 +10,11 @@
         <b-container fluid>
             <b-row id="Selection-row">
                 <b-col class="select-projects text-center">
-                    <router-link to="projects" class="selection-button"  tag="button">Projekte finden</router-link>
+                    <router-link to="shops" class="selection-button"  tag="button">Für Käufer</router-link>
                     <br><br>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam
                 </b-col>
                 <b-col class="select-activists text-center">
-                    <router-link to="" class="selection-button" tag="button">Profile durchsuchen</router-link>
+                    <router-link to="create-shop" class="selection-button" tag="button">Für Verkäufer</router-link>
                     <br><br>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden
                 </b-col>
             </b-row>
