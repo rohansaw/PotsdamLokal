@@ -18,9 +18,11 @@
 </template>
 
 <script>
-import axios from 'axios'
+import RepositoryFactory from '../../repositories/RepositoryFactory'
 import shopItem from './ShopItem'
 import pagination from './Pagination'
+
+const shopsRepository = RepositoryFactory.get('shops')
 
 export default {
   components: {
@@ -39,15 +41,9 @@ export default {
       handler (page) {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
-          axios.get('/api/projects', {
-            params: {
-              page: page
-            }
-          })
-            .then(response => {
-              this.pager = response.data.pager
-              this.pageOfProjects = response.data.pageOfProjects
-            })
+          requestResult = shopsRepository.getShopsPage(page)
+          this.pager = requestResult.pager
+          this.pageOfProjects = requestResult.pageOfProjects
         }
       }
     }
