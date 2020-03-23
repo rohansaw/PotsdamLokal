@@ -12,6 +12,7 @@ const cookieSession = require('cookie-session')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 
+/*
 const pg = require('pg');
 const pool = new pg.Pool({
 user: 'sysadmin',
@@ -23,7 +24,7 @@ port: '5432'});
 pool.query("SELECT NOW()", (err, res) => {
   console.log(err, res);
   pool.end()
-});
+}); */
 
 // getting the local authentication type
 const LocalStrategy = require('passport-local').Strategy
