@@ -5,8 +5,7 @@
         <h1 class="display-3">PotsdamLokal - Einkaufen</h1>
         <p class="lead">Unterstütze jetzt den lokalen Einzelhandel in Potsdam!</p>
         <h3>In Zeiten von Covid19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in Kontakt treten und Zeitslots zum Abholen der Produkte ausmachen oder euch Produkte liefern lassen</h3>
-        <div class="text-center">
-        </div>
+        <div class="text-center"/>
       </b-container>
     </b-jumbotron>
     <b-container fluid>
@@ -17,7 +16,9 @@
             class="selection-button"
             tag="button">Für Käufer</router-link>
           <br><br><p>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam</p>
-          <img src="../../assets/shoppingCart.svg" class="intro-image mt-5"/>
+          <img
+            src="../../assets/shoppingCart.svg"
+            class="intro-image mt-5">
         </b-col>
         <b-col class="select-activists text-center">
           <router-link
@@ -25,7 +26,9 @@
             class="selection-button"
             tag="button">Für Verkäufer</router-link>
           <br><br><p>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden</p>
-           <img src="../../assets/shop.svg" class="intro-image"/>
+          <img
+            src="../../assets/shop.svg"
+            class="intro-image">
         </b-col>
       </b-row>
       <div id="Info-container"/>
