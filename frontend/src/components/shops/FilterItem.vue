@@ -7,7 +7,7 @@
         id="id"
         type="checkbox"
         value="id"
-        @input="$emit('input', $event.target.value)"/>
+        @input="$emit('input', $event.target.value)">
       {{ name }}
     </label>
   </li>
@@ -30,6 +30,6 @@ export default {
 
 <style scoped>
 label{
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 </style>

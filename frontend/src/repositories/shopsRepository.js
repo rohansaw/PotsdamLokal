@@ -13,7 +13,7 @@ export default {
       params: {
         page: pageNumber
       }
-    }).then(res => console.log(res))
+    })
   },
 
   getShopBranches () {

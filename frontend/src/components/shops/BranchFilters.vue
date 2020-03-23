@@ -7,7 +7,7 @@
         :key="branch.value"
         :id="branch.value"
         :name="branch.text"
-        />
+      />
     </ul>
   </div>
 </template>
@@ -26,10 +26,8 @@ export default {
   },
   mounted () {
     shopRepository.getShopBranches()
-    .then(res => {
-        console.log(res.data)
+      .then(res => {
         this.branches = res.data
-
       })
       .catch(error => console.log(error))
   },
