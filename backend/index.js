@@ -5,6 +5,10 @@ const express = require('express')
 // example array of 150 items to be paged
 let projects = [...Array(150).keys()].map(i => ({ id: (i + 1), title: 'Ökologischer Bauernhof: Ernte ' + (i + 1) }));
 
+let branches = []
+
+let categories = []
+
 
 // creating an express instance
 const app = express()
