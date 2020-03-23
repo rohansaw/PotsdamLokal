@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #Navigation{
 }
 @media screen {

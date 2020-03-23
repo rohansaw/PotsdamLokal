@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .project-item{
     height: 200px;
     overflow: hidden;

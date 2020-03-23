@@ -17,7 +17,7 @@
   </footer>
 </template>
 
-<style scoped>
+<style>
 footer {
     min-height: 80px;
     background-color: #A0D0F8;

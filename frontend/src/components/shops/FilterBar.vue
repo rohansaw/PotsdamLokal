@@ -51,7 +51,7 @@
         <b-container>
           <branchFilters
             v-if="selectedFilterMenu==='branches'"
-            v-on:branchSelected="branches.push($event)"/>
+            @branchSelected="branches.push($event)"/>
           <categoryFilters v-if="selectedFilterMenu==='categories'"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #filterbar{
   z-index: 19;
   background-color:  #FFF;
