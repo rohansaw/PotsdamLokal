@@ -42,7 +42,10 @@ export default {
     skillTag
   },
   props: {
-    title: String
+    title: {
+      type: String,
+      default: 'test'
+    }
   },
   methods: {
     showDetail: function (id) {
@@ -57,7 +60,7 @@ export default {
     height: 200px;
     overflow: hidden;
 }
-img{
-    height:200px;
-}
+/* img{ */
+/*     height:200px; */
+/* } */
 </style>

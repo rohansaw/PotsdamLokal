@@ -34,8 +34,8 @@ export default {
   height: 300px;
   background-color: #ED8182;
 }
-.selection-button{
-  color: #FFF !important;
-  border-color: #FFF !important;
-}
+/* .selection-button{ */
+/*   color: #FFF !important; */
+/*   border-color: #FFF !important; */
+/* } */
 </style>

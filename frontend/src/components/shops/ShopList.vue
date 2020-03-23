@@ -47,10 +47,10 @@ export default {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
           shopsRepository.getShopsPage(page)
-          .then(response => {
-            return response.data
-          })
-          .catch(error => console.log('An error occured', error))
+            .then(response => {
+              return response.data
+            })
+            .catch(error => console.log('An error occured', error))
         }
       }
     }
@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #ShopList{
     margin-top: 40px;
 }

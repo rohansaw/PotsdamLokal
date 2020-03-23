@@ -46,6 +46,11 @@
 
 <script>
 export default {
-  props: ['pager']
+  props: {
+    pager: {
+      type: Object,
+      default: () => {}
+    }
+  }
 }
 </script>

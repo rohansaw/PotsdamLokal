@@ -16,8 +16,14 @@
 <script>
 export default {
   props: {
-    id: Number,
-    name: String,
+    id: {
+      type: Number,
+      default: 0
+    },
+    name: {
+      type: String,
+      default: 'test'
+    }
   }
 }
 </script>

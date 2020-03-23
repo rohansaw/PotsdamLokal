@@ -49,7 +49,9 @@
         v-if="selectedFilterMenu!=''"
         class="dropdown-filters">
         <b-container>
-          <branchFilters v-if="selectedFilterMenu==='branches'" v-on:branchSelected="branches.push($event)"/>
+          <branchFilters
+            v-if="selectedFilterMenu==='branches'"
+            v-on:branchSelected="branches.push($event)"/>
           <categoryFilters v-if="selectedFilterMenu==='categories'"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
@@ -88,14 +90,13 @@ export default {
       } else {
         this.selectedFilterMenu = ''
       }
-    },
-
+    }
 
   }
 }
 </script>
 
-<style>
+<style scoped>
 #filterbar{
   z-index: 19;
   background-color:  #FFF;
