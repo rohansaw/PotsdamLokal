@@ -48,10 +48,8 @@ export default {
         if (page !== this.pager.currentPage) {
           shopsRepository.getShopsPage(page)
             .then(response => {
-              console.log(response)
               this.pager = response.data.pager
               this.pageOfProjects = response.data.pageOfProjects
-              console.log(this.pageOfProjects)
             })
             .catch(error => console.log('An error occured', error))
         }
