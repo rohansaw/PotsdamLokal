@@ -62,7 +62,7 @@ export default {
 }
 
 .navbar-brand{
-  color: #ED8182 !important; 
+  color: #ED8182 !important;
   border-bottom: none !important;
   font-weight: bold;
   font-size: 32px;
@@ -70,9 +70,9 @@ export default {
 
 .nav-link{
   font-size: 16px;
-  color: #000 !important; 
+  color: #000 !important;
   padding: 3px 0px !important;
-   margin: 0px 10px; 
+   margin: 0px 10px;
 }
 
 .router-link-exact-active{
