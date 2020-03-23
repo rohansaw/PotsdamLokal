@@ -6,8 +6,8 @@
         v-for="branch in branches"
         :key="branch.value"
         :id="branch.value"
-        :name="branch.name"
-        v-model="selected"/>
+        :name="branch.text"
+        />
     </ul>
   </div>
 </template>
@@ -25,7 +25,13 @@ export default {
     }
   },
   mounted () {
-    this.branches = shopRepository.getBranches()
+    shopRepository.getShopBranches()
+    .then(res => {
+        console.log(res.data)
+        this.branches = res.data
+
+      })
+      .catch(error => console.log(error))
   },
   components: {
     filterItem

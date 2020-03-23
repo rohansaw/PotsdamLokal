@@ -1,7 +1,7 @@
 import Repository from './Repository'
 import router from '../router'
 
-const resource = '/api/user/current'
+const resource = 'api/shops'
 
 export default {
   getShopDetail (aShop) {
@@ -17,9 +17,7 @@ export default {
   },
 
   getShopBranches () {
-    return Repository.get(`${resource}/branches`).then(response => {
-      return response.data
-    })
+    return Repository.get(`api/branches/`)
   },
 
   postNewShop (form) {
