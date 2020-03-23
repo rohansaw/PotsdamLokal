@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const mongoose = require('mongoose')
-const cors = require('cors')
+//const cors = require('cors')
 const path = require('path')
 const errorHandler = require('errorhandler')
 
@@ -13,7 +13,7 @@ const app = express()
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-app.use(cors())
+//app.use(cors())
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

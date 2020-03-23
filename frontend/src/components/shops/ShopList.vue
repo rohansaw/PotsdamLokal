@@ -1,5 +1,5 @@
 <template>
-  <div id="ProjectsList">
+  <div id="ShopList">
     <b-container>
       <div v-if="!pageOfProjects.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
@@ -46,9 +46,11 @@ export default {
       handler (page) {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
-          requestResult = shopsRepository.getShopsPage(page)
-          this.pager = requestResult.pager
-          this.pageOfProjects = requestResult.pageOfProjects
+          shopsRepository.getShopsPage(page)
+          .then(response => {
+            return response.data
+          })
+          .catch(error => console.log('An error occured', error))
         }
       }
     }
@@ -57,7 +59,7 @@ export default {
 </script>
 
 <style>
-#ProjectsList{
+#ShopList{
     margin-top: 40px;
 }
 </style>

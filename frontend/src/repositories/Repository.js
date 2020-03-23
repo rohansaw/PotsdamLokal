@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const baseDomain = 'https://jsonplaceholder.typicode.com'
-const baseUrl = `${baseDomain}`
+const baseDomain = 'localhost'
+const baseURL = `${baseDomain}:3000`
 
 export default axios.create({
-  baseUrl,
+  baseURL,
   headers: {}
 })
