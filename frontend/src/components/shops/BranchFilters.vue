@@ -6,7 +6,8 @@
         v-for="branch in branches"
         :key="branch.value"
         :id="branch.value"
-        :name="branch.name"/>
+        :name="branch.name"
+        v-model="selected"/>
     </ul>
   </div>
 </template>
@@ -19,9 +20,10 @@ const shopRepository = RepositoryFactory.get('shops')
 
 export default {
   data () {
-    return (
-      branches
-    )
+    return {
+      branches: [],
+      selected: []
+    }
   },
   mounted () {
     this.branches = shopRepository.getBranches()
