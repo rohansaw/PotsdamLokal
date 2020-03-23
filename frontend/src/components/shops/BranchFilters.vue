@@ -1,12 +1,12 @@
 <template>
-  <div id="InterestFilters">
+  <div id="BranchesFilters">
     Select All | Unselect All
     <ul class="filtersList">
       <filterItem
-        v-for="i in 24"
-        :key="i"
-        :id="i"
-        :name="'Klimabewegung'"/>
+        v-for="branch in branches"
+        :key="branch.value"
+        :id="branch.value"
+        :name="branch.name"/>
     </ul>
   </div>
 </template>
@@ -14,7 +14,18 @@
 <!-- Später dynamisch nach Einträgen aus der Datenbank anzeigen -->
 <script>
 import filterItem from './FilterItem'
+import RepositoryFactory from '../../repositories/RepositoryFactory'
+const shopRepository = RepositoryFactory.get('shops')
+
 export default {
+  data () {
+    return (
+      branches
+    )
+  },
+  mounted () {
+    this.branches = shopRepository.getBranches()
+  },
   components: {
     filterItem
   }
@@ -32,7 +43,7 @@ export default {
   column-count: 3;
   padding: 0px;
 }
-#InterestFilters{
+#BranchesFilters{
   padding: 20px 0px;
 }
 </style>
