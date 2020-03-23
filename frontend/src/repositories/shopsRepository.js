@@ -14,10 +14,6 @@ export default {
         page: pageNumber
       }
     })
-      .then(response => {
-        return response.data
-      })
-      .catch(error => console.log('An error occured', error))
   },
 
   getShopBranches () {
