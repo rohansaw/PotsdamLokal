@@ -33,11 +33,17 @@
               label-for="form-branch">
               <b-form-select
                 id="form-branch"
+                <<<<<<<
+                head
                 :options="[{ text: 'Auswählen...', value: null }, 'Bücher & Papetrie', 'Design & Geschenkartikel', 'Baby & Kind', 'Mode & Accesoirs', 'Möbel & Interiuer', 'Lebensmittel', 'Hobby & Freizeit', 'Schmuck', 'Parfümerie & Kosmetik', 'Apotheke']"
-                :value="null"
+                =======
                 class="mb-2 mr-sm-2 mb-sm-0"
+                :options="branches"
+              >>>>>>> 9c4ab1f6474f858cf0b7d8209e791779e768932f
+              :value="null"
+              class="mb-2 mr-sm-2 mb-sm-0"
               />
-            </b-form-group>
+            </b-form-select></b-form-group>
 
             <b-form-group
               id="form-desc"
@@ -45,7 +51,7 @@
               label-for="form-desc">
               <b-form-textarea
                 id="form-desc"
-                v-model="description"
+                v-model="form.description"
                 placeholder="Beschreibung sie hier kurz ihr Unternehmen..."
                 rows="3"
                 max-rows="6"
@@ -81,8 +87,13 @@ export default {
         adress: '',
         delivers: false
       },
-      show: true
+      show: true,
+      branches: []
     }
+  },
+  mounted () {
+    axios.get('/api/branches')
+      .then(res => this.branches = res.data)
   },
   methods: {
     onSubmit (evt) {
@@ -95,7 +106,8 @@ export default {
         .catch((errors) => {
           console.log('Could not add Project')
         })
-    }
+    },
+    show: true
   }
 }
 </script>

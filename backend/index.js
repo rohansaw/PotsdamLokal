@@ -5,7 +5,7 @@ const express = require('express')
 // example array of 150 items to be paged
 const projects = [...Array(150).keys()].map(i => ({ id: (i + 1), title: 'Ökologischer Bauernhof: Ernte ' + (i + 1) }))
 
-const branches = []
+const branches = [{ value: 1, text: 'Bücher & Papetrie' }, { value: 2, text: 'Design & Geschenkartikel' }, { value: 3, text: 'Baby & Kind' }, { value: 4, text: 'Mode & Accesoirs' }, { value: 5, text: 'Möbel & Interiuer' }, { value: 6, text: 'Lebensmittel' }, { value: 7, text: 'Hobby & Freizeit' }, { value: 8, text: 'Schmuck' }, { value: 9, text: 'Parfümerie & Kosmetik' }, { value: 10, text: 'Apotheke' }]
 
 const categories = []
 
@@ -156,6 +156,12 @@ app.post('/api/createProject/', (req, res, next) => {
   console.log(projects)
   // Returnt man so wirklich, fühlt sich unschön an...
   return res.send('')
+})
+
+app.get('/api/branches/', (req, res) => {
+  const answer = branches.sort()
+  answer.unshift({ value: null, text: 'Auswählen...' })
+  return res.send(answer)
 })
 
 app.listen(3000, () => {
