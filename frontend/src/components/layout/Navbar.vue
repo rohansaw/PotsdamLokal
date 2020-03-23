@@ -61,22 +61,22 @@ export default {
   }
 }
 
-/* .navbar-brand{ */
-/*   color: #ED8182 !important; */
-/*    border-bottom: none !important; */
-/*   font-weight: bold; */
-/*   font-size: 32px; */
-/* } */
+.navbar-brand{
+  color: #ED8182 !important; 
+  border-bottom: none !important;
+  font-weight: bold;
+  font-size: 32px;
+}
 
-/* .nav-link{ */
-/*   font-size: 16px; */
-/*   color: #000 !important; */
-/*   padding: 3px 0px !important; */
-/*   margin: 0px 10px; */
-/* } */
+.nav-link{
+  font-size: 16px;
+  color: #000 !important; 
+  padding: 3px 0px !important;
+   margin: 0px 10px; 
+}
 
-/* .router-link-exact-active{ */
-/*   border-bottom: 2px solid #ED8182; */
-/* } */
+.router-link-exact-active{
+  border-bottom: 2px solid #ED8182;
+}
 
 </style>

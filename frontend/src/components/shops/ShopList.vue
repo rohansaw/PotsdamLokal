@@ -47,18 +47,11 @@ export default {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
           shopsRepository.getShopsPage(page)
-<<<<<<< HEAD
           .then(response => {
             this.pager = response.data.pager
             this.pageOfProjects = response.data.pageOfProjects
           })
           .catch(error => console.log('An error occured', error))
-=======
-            .then(response => {
-              return response.data
-            })
-            .catch(error => console.log('An error occured', error))
->>>>>>> a3eef43a523e1875161fdab7d2127d3d13df185b
         }
       }
     }
