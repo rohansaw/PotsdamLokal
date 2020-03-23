@@ -1,9 +1,8 @@
 <template>
     <div id="Projects">
         <b-jumbotron class="bg-image mb-0 text-center">
-            <h1>Bringe dich in Projekten ein!</h1>
-            <h2>Finde Projekte nach deinen Fähigkeiten und Interessen</h2>
-            <router-link to="create-project" class="selection-button mt-3"  tag="button">+ Projekt hinzufügen</router-link>
+            <h1>Suche nach Läden in Potsdam</h1>
+            <h2>Finde Läden, die das Produkt anbieten, dass du suchst</h2>
         </b-jumbotron>
         <!-- bar, die oben andockt: Searchbox, Causes (Mit icons?), skills (option: use my profile), loction, mehr(NGO/Privat) -->
         <filterbar/>

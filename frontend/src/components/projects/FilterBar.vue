@@ -6,12 +6,12 @@
                     <div class="row">
                         <div v-on:click="toggleFilterMenu('interests')" class="col-md-4 filter-item">
                             <font-awesome-icon class="icon-padded" icon="heart" />
-                            Interessen
+                            Branche
                             <font-awesome-icon class="ml-auto" icon="angle-down" />
                         </div>
                         <div v-on:click="toggleFilterMenu('skills')"  class="col-md-4 filter-item">
                             <font-awesome-icon class="icon-padded" icon="pencil-ruler" />
-                            Skills
+                            Kategorien
                             <font-awesome-icon class="ml-auto" icon="angle-down" />
                         </div>
                         <div v-on:click="toggleFilterMenu('more')" class="col-md-4 filter-item">

@@ -2,22 +2,20 @@
     <div id ="LandingPage">    
         <b-jumbotron class="bg-image mb-0">
             <b-container>
-                <h1 class="display-3">KollektivAktiv</h1>
-                <p class="lead">Anonym | Unabhängig | Sozial</p>
-                <h3>Finde Projekte oder suche Mitstreiter:innen und verändert gemeinsam die Welt!</h3>
+                <h1 class="display-3">PotsdamLokal - Einkaufen</h1>
+                <p class="lead">Unterstütze jetzt den lokalen Einzelhandel in Potsdam</p>
+                <h3>In Zeiten von Covid19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in kontakt treten und Zeitslots zum abholen der Produkte ausmachen oder auch Produkte liefern lassen</h3>
             </b-container>
         </b-jumbotron>
         <b-container fluid>
             <b-row id="Selection-row">
                 <b-col class="select-projects text-center">
                     <router-link to="projects" class="selection-button"  tag="button">Projekte finden</router-link>
-                    <br><br>Du möchtest duch ehrenamtlich engagieren, weißt aber nicht, wo genau du deine Fähigkeiten einbringen kannst?
-                        Finde jetzt Projekte nach deinen Interessen!
+                    <br><br>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam
                 </b-col>
                 <b-col class="select-activists text-center">
                     <router-link to="" class="selection-button" tag="button">Profile durchsuchen</router-link>
-                    <br><br>Du hast eine Idee für ein Projekt um die Welt nachhaltiger oder sozialer zu gestalten?
-                        Dann finde jetzt Mitstreiter:innen für deine Projektideen. Durchsuche öffentlichen Profile, nach Fähigkeiten und Interessen!
+                    <br><br>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden
                 </b-col>
             </b-row>
             <div id="Info-container">
