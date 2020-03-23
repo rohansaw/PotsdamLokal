@@ -1,7 +1,7 @@
 import Repository from './Repository'
 import router from '../router'
 
-const resource = '/shops'
+const resource = '/api/user/current'
 
 export default {
   getShopDetail (aShop) {
