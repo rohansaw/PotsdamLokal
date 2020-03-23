@@ -26,7 +26,7 @@
             <b-form-select
                 id="form-branch"
                 class="mb-2 mr-sm-2 mb-sm-0"
-                :options="[{ text: 'Auswählen...', value: null }, 'Bücher & Papetrie', 'Design & Geschenkartikel', 'Baby & Kind', 'Mode & Accesoirs', 'Möbel & Interiuer', 'Lebensmittel', 'Hobby & Freizeit', 'Schmuck', 'Parfümerie & Kosmetik', 'Apotheke']"
+                :options="branches"
                 :value="null"
             ></b-form-select>
         </b-form-group>
@@ -34,7 +34,7 @@
         <b-form-group id="form-desc" label="Beschreibung" label-for="form-desc">
             <b-form-textarea
                 id="form-desc"
-                v-model="description"
+                v-model="form.description"
                 placeholder="Beschreibung sie hier kurz ihr Unternehmen..."
                 rows="3"
                 max-rows="6"
@@ -68,8 +68,13 @@ import router from "../../router"
           adress: "",
           delivers: false,
         },
-        show: true
+        show: true,
+        branches: []
       }
+    },
+    mounted(){
+      axios.get("/api/branches")
+      .then(res => this.branches = res.data)
     },
     methods: {
       onSubmit(evt) {
