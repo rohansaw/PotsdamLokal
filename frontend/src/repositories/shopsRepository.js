@@ -4,7 +4,6 @@ import router from '../router'
 const resource = '/shops'
 
 export default {
-
   getShopDetail (aShop) {
     return Repository.get(`${resource}/${aShop}`)
   },
@@ -22,17 +21,18 @@ export default {
   },
 
   getShopBranches () {
-    return Repository.get(`${resource}/branches`)
-      .then(response => { return response.data })
+    return Repository.get(`${resource}/branches`).then(response => {
+      return response.data
+    })
   },
 
   postNewShop (form) {
     return Repository.post(`${resource}/createProject`, form)
-      .then((response) => {
+      .then(response => {
         console.log('Project Added')
         router.push('/projects')
       })
-      .catch((errors) => {
+      .catch(errors => {
         console.log('Could not add Project')
       })
   }
