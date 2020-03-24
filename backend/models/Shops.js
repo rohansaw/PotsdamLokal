@@ -4,7 +4,10 @@ const { Schema } = mongoose
 
 const ShopsSchema = new Schema({
   name: String,
-  industries: [String],
+  industries: [{
+    value: Number,
+    text: String
+  }],
   description: String,
   adress: {
     plz: Number,
