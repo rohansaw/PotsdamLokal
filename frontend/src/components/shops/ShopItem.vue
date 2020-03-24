@@ -60,7 +60,7 @@ export default {
     height: 200px;
     overflow: hidden;
 }
-/* img{ */
-/*     height:200px; */
-/* } */
+img{
+  height:200px;
+}
 </style>
