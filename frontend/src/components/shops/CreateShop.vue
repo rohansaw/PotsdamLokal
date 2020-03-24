@@ -46,6 +46,7 @@
                 id="form-desc"
                 v-model="form.description"
                 placeholder="Beschreibung sie hier kurz ihr Unternehmen..."
+                :maxlength="2000"
                 rows="3"
                 max-rows="6"
               />
@@ -60,6 +61,7 @@
                 <b-form-input
                   id="form-plz"
                   v-model="form.adress.plz"
+                  type="number"
                   required
                   placeholder="PLZ..."
                 />
@@ -68,6 +70,7 @@
                 <b-form-input
                   id="form-straße"
                   v-model="form.adress.street"
+                  :maxlength="80"
                   required
                   placeholder="Straße und Hausnummer..."
                 />
@@ -110,7 +113,12 @@ export default {
     }
   },
   mounted () {
-    this.branches = shopsRepository.getBranches()
+    shopsRepository.getShopTags()
+      .then(res => {
+        this.branches = res.data
+        console.log(this.branches)
+      })
+      .catch(error => console.log(error))
   },
   methods: {
     onSubmit (evt) {
