@@ -9,15 +9,15 @@ export default {
   },
 
   getShopsPage (pageNumber) {
-    return Repository.get(`${resource}`, {
+    return Repository.get(resource, {
       params: {
         page: pageNumber
       }
     })
   },
 
-  getShopBranches () {
-    return Repository.get(`api/branches/`)
+  getShopTags () {
+    return Repository.get(`${resource}/tags`)
   },
 
   postNewShop (form) {

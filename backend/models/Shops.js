@@ -4,7 +4,7 @@ const { Schema } = mongoose
 
 const ShopsSchema = new Schema({
   name: String,
-  branch: String
+  tag: [String]
 })
 
 mongoose.model('Shops', ShopsSchema)

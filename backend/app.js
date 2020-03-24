@@ -30,6 +30,7 @@ mongoose.connect('mongodb://localhost/potsdam-lokal', {
 mongoose.set('debug', true)
 
 require('./models/Users')
+require('./models/Shops')
 require('./config/passport')
 app.use(require('./routes'))
 

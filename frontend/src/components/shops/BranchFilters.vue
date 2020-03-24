@@ -1,12 +1,14 @@
 <template>
   <div id="BranchesFilters">
     Select All | Unselect All
+    {{ selected }}
     <ul class="filtersList">
       <filterItem
         v-for="branch in branches"
         :key="branch.value"
         :id="branch.value"
         :name="branch.text"
+        @input="pushSelected($event)"
       />
     </ul>
   </div>
@@ -25,7 +27,7 @@ export default {
     }
   },
   mounted () {
-    shopRepository.getShopBranches()
+    shopRepository.getShopTags()
       .then(res => {
         this.branches = res.data
       })
@@ -33,6 +35,15 @@ export default {
   },
   components: {
     filterItem
+  },
+  methods: {
+    pushSelected (item) {
+      if (this.selected.includes(item)) {
+        this.selected.splice(this.selected.indexOf(item), 1)
+      } else {
+        this.selected.push(item)
+      }
+    }
   }
 
 }

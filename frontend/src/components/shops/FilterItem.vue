@@ -6,7 +6,7 @@
       <input
         id="id"
         type="checkbox"
-        value="id"
+        :value="name"
         @input="$emit('input', $event.target.value)">
       {{ name }}
     </label>
