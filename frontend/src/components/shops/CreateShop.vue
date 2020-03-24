@@ -33,6 +33,7 @@
               label-for="form-branch">
               <b-form-select
                 id="form-branch"
+                v-model="form.industries"
                 :options="branches"
                 :value="null"
                 class="mb-2 mr-sm-2 mb-sm-0"

@@ -1,14 +1,14 @@
 <template>
   <div id="ShopList">
-    <filterbar v-bind.sync="search" />
+    <filterbar @submit="getShops($event)"/>
     <b-container class="shoplist">
       <div v-if="!pageOfProjects.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>
       <div v-else>
         <b-row>
-          <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
-            von {{ pager.totalItems }} Ergebnissen<br></p>
+          <!-- <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
+            von {{ pager.totalItems }} Ergebnissen<br></p> -->
           <div class="orderBySelection text-right">
             Karten-Ansicht | Order by
           </div>
@@ -40,8 +40,7 @@ export default {
   data () {
     return {
       pager: {},
-      pageOfProjects: [],
-      search: {}
+      pageOfProjects: []
     }
   },
   watch: {
@@ -50,13 +49,27 @@ export default {
       handler (page) {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
-          shopsRepository.getShopsPage(page)
+          shopsRepository.getShopsPage(page, this.filters)
             .then(response => {
               this.pager = response.data.pager
               this.pageOfProjects = response.data.pageOfProjects
             })
             .catch(error => console.log('An error occured', error))
         }
+      }
+    }
+  },
+  methods: {
+    getShops (filters) {
+      const page = parseInt(this.pager.page) || 1
+      if (page !== this.pager.currentPage) {
+        shopsRepository.getShopsPage(page, filters)
+          .then(response => {
+            console.log(response)
+            this.pager = response.data.pager
+            this.pageOfProjects = response.data.pageOfProjects
+          })
+          .catch(error => console.log('An error occured', error))
       }
     }
   }

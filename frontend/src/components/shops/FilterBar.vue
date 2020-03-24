@@ -17,7 +17,7 @@
                 class="ml-auto"
                 icon="angle-down" />
             </div>
-            <div
+            <!-- <div
               class="col-md-4 filter-item"
               @click="toggleFilterMenu('categories')">
               <font-awesome-icon
@@ -27,7 +27,7 @@
               <font-awesome-icon
                 class="ml-auto"
                 icon="angle-down" />
-            </div>
+            </div> -->
             <div
               class="col-md-4 filter-item"
               @click="toggleFilterMenu('more')">
@@ -38,6 +38,14 @@
               <font-awesome-icon
                 class="ml-auto"
                 icon="angle-down" />
+            </div>
+            <div
+              class="col-md-4 filter-item"
+              @click="$emit('submit', search)">
+              <font-awesome-icon
+                class="icon-padded"
+                icon="search" />
+              Suchen
             </div>
           </div>
         </b-col>
@@ -51,7 +59,7 @@
         <b-container>
           <branchFilters
             v-if="selectedFilterMenu==='branches'"
-            @branchSelected="branches.push($event)"/>
+            @changed="pushSelected($event)"/>
           <categoryFilters v-if="selectedFilterMenu==='categories'"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
@@ -71,7 +79,7 @@ export default {
     return {
       selectedFilterMenu: '',
       search: {
-        branches: null,
+        branches: [],
         categories: null,
         text: null
       }
@@ -89,6 +97,14 @@ export default {
         this.selectedFilterMenu = type
       } else {
         this.selectedFilterMenu = ''
+      }
+    },
+
+    pushSelected (item) {
+      if (this.search.branches.includes(item)) {
+        this.search.branches.splice(this.search.branches.indexOf(item), 1)
+      } else {
+        this.search.branches.push(item)
       }
     }
 

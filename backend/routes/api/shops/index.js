@@ -12,6 +12,7 @@ router.use('/create', require('./create'))
 const projects = [...Array(150).keys()].map(i => ({ id: (i + 1), title: 'Ökologischer Bauernhof: Ernte ' + (i + 1) }))
 
 router.get('/', auth.optional, (req, res, next) => {
+  console.log("asdasd")
   const page = parseInt(req.query.page) || 1
   const filters = JSON.parse(req.query.filters)
   console.log(page, filters)
