@@ -13,14 +13,17 @@ const projects = [...Array(150).keys()].map(i => ({ id: (i + 1), title: 'Ökolog
 
 router.get('/', auth.optional, (req, res, next) => {
   const page = parseInt(req.query.page) || 1
-  console.log(req.query.page)
+  const filters = JSON.parse(req.query.filters)
+  console.log(page, filters)
 
   const pageSize = 15
-  const pager = paginate(projects.length, page, pageSize)
+  // const shops = Shops.find({ $or: filters.map(filter => ({ industries: filter })) })
+  const shops = Shops.find({industries: filters[0]})
+  const pager = paginate(shops.length, page, pageSize)
 
-  const pageOfProjects = projects.slice(pager.startIndex, pager.endIndex + 1)
+  const pageOfShops = projects.slice(pager.startIndex, pager.endIndex + 1)
 
-  return res.json({ pager, pageOfProjects })
+  return res.json({ pager, pageOfShops })
 })
 
 router.post('/', auth.optional, (req, res, next) => {
