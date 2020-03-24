@@ -1,5 +1,6 @@
 <template>
   <div id="ShopList">
+    <filterbar v-bind.sync="search" />
     <b-container>
       <div v-if="!pageOfProjects.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
@@ -26,18 +27,21 @@
 import RepositoryFactory from '../../repositories/RepositoryFactory'
 import shopItem from './ShopItem'
 import pagination from './Pagination'
+import filterbar from './FilterBar'
 
 const shopsRepository = RepositoryFactory.get('shops')
 
 export default {
   components: {
     shopItem,
-    pagination
+    pagination,
+    filterbar
   },
   data () {
     return {
       pager: {},
-      pageOfProjects: []
+      pageOfProjects: [],
+      search: {}
     }
   },
   watch: {

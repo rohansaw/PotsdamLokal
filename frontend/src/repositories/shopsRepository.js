@@ -8,10 +8,11 @@ export default {
     return Repository.get(`${resource}/${aShop}`)
   },
 
-  getShopsPage (pageNumber) {
+  getShopsPage (pageNumber, query) {
     return Repository.get(resource, {
       params: {
-        page: pageNumber
+        page: pageNumber,
+        filters: query
       }
     })
   },

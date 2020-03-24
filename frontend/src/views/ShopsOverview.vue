@@ -5,19 +5,16 @@
       <h2>Finde Läden, die das Produkt anbieten, dass du suchst</h2>
     </b-jumbotron>
     <!-- bar, die oben andockt: Searchbox, Causes (Mit icons?), skills (option: use my profile), loction, mehr(NGO/Privat) -->
-    <filterbar/>
     <shopslist/>
   </div>
 </template>
 
 <script>
 import shopslist from '../components/shops/ShopList'
-import filterbar from '../components/shops/FilterBar'
 
 export default {
   components: {
-    shopslist,
-    filterbar
+    shopslist
   },
   data: function () {
     return {
