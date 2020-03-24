@@ -13,9 +13,7 @@ router.post('/', auth.optional, (req, res) => {
     res.status(422).json({ errors: { name: 'is required' } })
   }
 
-  console.log('l;akjsd;lkj')
   const finalShop = new Shops(shop)
-  console.log('l;akjsd;lkj')
 
   finalShop.save()
     .then(() => {

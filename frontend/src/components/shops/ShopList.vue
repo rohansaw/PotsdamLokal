@@ -1,7 +1,7 @@
 <template>
   <div id="ShopList">
     <filterbar v-bind.sync="search" />
-    <b-container>
+    <b-container class="shoplist">
       <div v-if="!pageOfProjects.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-#ShopList{
+.shoplist{
     margin-top: 40px;
 }
 </style>
