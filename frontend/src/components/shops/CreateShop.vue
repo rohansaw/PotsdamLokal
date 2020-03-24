@@ -97,8 +97,7 @@ export default {
     return {
       form: {
         name: '',
-        branch: '',
-        categories: [],
+        industries: [],
         description: '',
         adress: {
           plz: null,
@@ -116,7 +115,7 @@ export default {
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      shopsRepository.postNewShop(this.form)
+      shopsRepository.postNewShop({ shop: this.form })
     }
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <li>
     <label
-      for="id"
+      :for="id"
       class="">
       <input
-        id="id"
+        :id="id"
         type="checkbox"
         :value="name"
         @input="$emit('input', $event.target.value)">

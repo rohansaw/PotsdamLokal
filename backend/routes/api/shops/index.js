@@ -1,8 +1,12 @@
 const router = module.exports = require('express').Router()
 const paginate = require('jw-paginate')
 const auth = require('../../auth')
+const mongoose = require('mongoose')
 
-router.use('/tags', require('./tags'))
+const Shops = mongoose.model('Shops')
+
+router.use('/industries', require('./industries'))
+router.use('/create', require('./create'))
 
 // example array of 150 items to be paged
 const projects = [...Array(150).keys()].map(i => ({ id: (i + 1), title: 'Ökologischer Bauernhof: Ernte ' + (i + 1) }))

@@ -17,13 +17,13 @@ export default {
   },
 
   getShopTags () {
-    return Repository.get(`${resource}/tags`)
+    return Repository.get(`${resource}/industries`)
   },
 
   postNewShop (form) {
-    return Repository.post(`${resource}/createProject`, form)
+    return Repository.post(`${resource}/create`, form)
       .then(response => {
-        console.log('Project Added')
+        console.log('Shop Added')
         router.push('/projects')
       })
       .catch(errors => {
