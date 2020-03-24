@@ -18,13 +18,14 @@ router.get('/', auth.optional, (req, res, next) => {
   console.log(page, filters)
 
   const pageSize = 15
-  // const shops = Shops.find({ $or: filters.map(filter => ({ industries: filter })) })
-  const shops = Shops.find({industries: filters[0]})
-  const pager = paginate(shops.length, page, pageSize)
+  Shops.find({ $or: filters.map(filter => ({ industries: filter })) })
+    .then((shops) => {
+      const pager = paginate(shops.length, page, pageSize)
 
-  const pageOfShops = projects.slice(pager.startIndex, pager.endIndex + 1)
+      const pageOfShops = shops.slice(pager.startIndex, pager.endIndex + 1)
 
-  return res.json({ pager, pageOfShops })
+      return res.json({ pager, pageOfShops })
+    })
 })
 
 router.post('/', auth.optional, (req, res, next) => {
