@@ -42,19 +42,19 @@
               <img
                 src="../../assets/groceries.svg"
                 class="img-feature">
-              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+              <p>Such online nach Geschäften in deiner Nähe und kaufe trotz der schwierigen Situation lokal ein. Bezahlen kannst du Kontaktlos online oder Bar bei der Übergabe</p>
             </b-col>
             <b-col>
               <img
                 src="../../assets/shop-presentation.svg"
                 class="img-feature">
-              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+              <p>Nehme einfach Kontakt mit dem Laden auf und schreibe deine Bestellung. Der Laden wird dich über Verfügbarkeit informieren und dir ein Angebot schicken.</p>
             </b-col>
             <b-col>
               <img
                 src="../../assets/delivery.svg"
                 class="img-feature">
-              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+              <p>Lasse dir Produkte direkt vor die Haustür liefern. Alternativ kannst du Zeitslot zum abholen der bereits rausgesuchten Produkte machen</p>
             </b-col>
           </b-row>
         </b-container>

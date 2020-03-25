@@ -21,7 +21,7 @@
         <shopItem
           v-for="project in pageOfProjects"
           :key="project.id"
-          :title="project.title"/>
+          :name="project.title"/>
         <pagination :pager="pager"/>
       </div>
     </b-container>
