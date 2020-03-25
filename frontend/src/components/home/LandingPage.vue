@@ -35,7 +35,33 @@
             class="intro-image">
         </b-col>
       </b-row>
-      <div id="Info-container"/>
+      <div id="Info-container" >
+        <b-container class="pt-5 pb-5 text-center">
+          <b-row >
+            <b-col>
+              <img
+                src="../../assets/groceries.svg"
+                class="img-feature">
+              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+            </b-col>
+            <b-col>
+              <img
+                src="../../assets/shop-presentation.svg"
+                class="img-feature">
+              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+            </b-col>
+            <b-col>
+              <img
+                src="../../assets/delivery.svg"
+                class="img-feature">
+              <p>Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier Irgendwas das wir tun hier</p>
+            </b-col>
+          </b-row>
+        </b-container>
+        <div id="Newest-container" class="text-center pt-5">
+          Hier Geschäfte die neu dabei sind
+        </div>
+      </div>
     </b-container>
   </div>
 </template>
@@ -76,6 +102,10 @@ export default {
 #Info-container{
   min-height: 300px;
 }
+#Newest-container{
+  min-height: 300px;
+  background-color: #FFF;
+}
 .intro-image{
   height: 25vh;
 }
@@ -86,5 +116,9 @@ export default {
   .intro-text p, h3{
     font-size: 18px !important;
   }
+}
+.img-feature{
+  height: 140px;
+  margin-bottom: 20px;
 }
 </style>
