@@ -45,7 +45,7 @@
               <font-awesome-icon
                 class="icon-padded"
                 icon="search" />
-              Suchen
+              Anwenden
             </div>
           </div>
         </b-col>

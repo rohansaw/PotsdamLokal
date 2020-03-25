@@ -18,7 +18,7 @@ export default {
     })
   },
 
-  getShopTags () {
+  getShopIndustries () {
     return Repository.get(`${resource}/industries`)
   },
 

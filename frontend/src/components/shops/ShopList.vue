@@ -1,7 +1,8 @@
 <template>
   <div id="ShopList">
-    <filterbar @submit="getShops($event)"/>
+    <filterbar @submit="newSearch($event)"/>
     <b-container class="shoplist">
+      SelectedFilters: {{ filters }}
       <div v-if="!pageOfProjects.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>
@@ -40,7 +41,8 @@ export default {
   data () {
     return {
       pager: {},
-      pageOfProjects: []
+      pageOfProjects: [],
+      filters: {}
     }
   },
   watch: {
@@ -49,28 +51,24 @@ export default {
       handler (page) {
         page = parseInt(page) || 1
         if (page !== this.pager.currentPage) {
-          shopsRepository.getShopsPage(page, this.filters)
-            .then(response => {
-              this.pager = response.data.pager
-              this.pageOfProjects = response.data.pageOfProjects
-            })
-            .catch(error => console.log('An error occured', error))
+          this.getShops()
         }
       }
     }
   },
   methods: {
-    getShops (filters) {
+    async getShops () {
       const page = parseInt(this.pager.page) || 1
       if (page !== this.pager.currentPage) {
-        shopsRepository.getShopsPage(page, filters)
-          .then(response => {
-            console.log(response)
-            this.pager = response.data.pager
-            this.pageOfProjects = response.data.pageOfProjects
-          })
-          .catch(error => console.log('An error occured', error))
+        const data = await shopsRepository.getShopsPage(page, this.filters)
+        this.pager = data.pager
+        this.pageOfProjects = data.pageOfProjects
       }
+    },
+
+    newSearch (filters) {
+      this.filters = filters
+      this.getShops()
     }
   }
 }

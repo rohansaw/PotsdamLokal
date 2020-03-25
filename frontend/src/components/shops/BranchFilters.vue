@@ -25,7 +25,7 @@ export default {
     }
   },
   mounted () {
-    shopRepository.getShopTags()
+    shopRepository.getShopIndustries()
       .then(res => {
         this.branches = res.data
       })
