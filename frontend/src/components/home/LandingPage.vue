@@ -10,7 +10,9 @@
     </b-jumbotron>
     <b-container fluid>
       <b-row id="Selection-row">
-        <b-col class="select-projects text-center">
+        <b-col
+          class="select-shopping text-center"
+          @click="routeTo('shops')">
           <router-link
             to="shops"
             class="selection-button"
@@ -20,7 +22,9 @@
             src="../../assets/shoppingCart.svg"
             class="intro-image mt-5">
         </b-col>
-        <b-col class="select-activists text-center">
+        <b-col
+          class="select-shop text-center"
+          @click="routeTo('create-shop')">
           <router-link
             to="create-shop"
             class="selection-button"
@@ -36,23 +40,36 @@
   </div>
 </template>
 
+<script>
+import router from '../../router'
+
+export default {
+  methods: {
+    routeTo (path) {
+      router.push(path)
+    }
+  }
+}
+</script>
+
 <style scoped>
 .bg-image{
   border-radius: 0px;
   color: #ecf0f1;
-  height: 40vh;
+  height: auto;
   background-color: #ED8182 !important;
 }
 #Selection-row{
   min-height: 300px;
   font-size: 20px;
   color: #212529;
+  cursor: pointer;
 }
-.select-projects{
+.select-shopping{
   padding: 50px;
   background-color: #A0D0F8;
 }
-.select-activists {
+.select-shop {
   padding: 50px;
   background-color: #a9d4f8;
 }
