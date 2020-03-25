@@ -1,5 +1,7 @@
 <template>
-  <b-col id="#Search">
+  <div
+    class="col-md-6"
+    id="#Search">
     <div class="filter-item search-container">
       <input
         :class="{bigger: clicked}"
@@ -9,7 +11,7 @@
         @click="clicked = !clicked">
       <font-awesome-icon icon="search" />
     </div>
-  </b-col>
+  </div>
 </template>
 
 <script>
@@ -23,20 +25,34 @@ export default {
 </script>
 
 <style scoped>
-.search-container{
+@media (min-width: 768px){
+  .search{
+    border-style: hidden;
+    display: inline-block;
+    width:200px;
+    background-color: #FFF;
+    font-weight: 800;
+    color: black;
+    transition: max-height 0.25s ease-out;
+    transition-property: width;
+  }
+  .search-container{
   position: absolute;
   right: 0;
 }
-.search{
-  border-style: hidden;
-  display: inline-block;
-  width: 100%;
-  width:200px;
-  background-color: #FFF;
-  font-weight: 800;
-  color: black;
-  transition: max-height 0.25s ease-out;
-  transition-property: width;
+}
+@media (max-width: 767px){
+  .search, .bigger{
+    width: 100% !important;
+    background-color: #FFF;
+    font-weight: 800;
+    color: black;
+    border-style: hidden;
+  }
+  .filter-item {
+    border: none;
+    padding: 0px;
+  }
 }
 .search:focus{
   outline: none;

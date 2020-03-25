@@ -32,7 +32,7 @@
           </b-navbar-nav>
 
           <b-navbar-nav v-else>
-            <b-nav-item>Registrieren</b-nav-item>
+            <b-nav-item to="register">Registrieren</b-nav-item>
             <b-nav-item to="login">Einloggen</b-nav-item>
           </b-navbar-nav>
 
@@ -55,7 +55,7 @@ export default {
 <style>
 #Navigation{
 }
-@media screen {
+@media (min-width: 768px) {
   .padded-nav{
     padding: 12px 100px;
   }

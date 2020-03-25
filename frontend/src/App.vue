@@ -42,4 +42,10 @@ export default {
 #main {
   min-height: 100vh;
 }
+.btn-primary{
+  background-color: #77C0F5 !important;
+  border-color: #77C0F5 !important;
+  color: #FFF;
+  font-weight: 600;
+}
 </style>

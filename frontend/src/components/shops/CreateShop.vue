@@ -82,6 +82,7 @@
               id="form-straße"
               @input="makeTag($event)"
               @keyup.enter="pushTag($event)"
+              @keyup.space="pushTag($event)"
               v-model="tagText"
               required
               :maxlength="20"
@@ -145,6 +146,7 @@ export default {
   },
   methods: {
     onSubmit (evt) {
+      // Check max amount of Tags (maximal 100)
       evt.preventDefault()
       shopsRepository.postNewShop({ shop: this.form })
     },

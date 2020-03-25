@@ -8,11 +8,15 @@
       </div>
       <div v-else>
         <b-row>
-          <!-- <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
-            von {{ pager.totalItems }} Ergebnissen<br></p> -->
-          <div class="orderBySelection text-right">
-            Karten-Ansicht | Order by
-          </div>
+          <b-col>
+            <!-- <p class="text-left">Zeige {{ (parseInt(pager.currentPage)-1)*parseInt(pager.pageSize)+1 }} - {{ parseInt(pager.currentPage)*parseInt(pager.pageSize) }}
+              von {{ pager.totalItems }} Ergebnissen<br></p> -->
+          </b-col>
+          <b-col>
+            <div class="orderBySelection text-right">
+              Karten-Ansicht | Order by ...
+            </div>
+          </b-col>
         </b-row>
         <shopItem
           v-for="project in pageOfProjects"

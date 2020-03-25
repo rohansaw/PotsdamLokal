@@ -1,10 +1,10 @@
 <template>
   <div id ="LandingPage">
     <b-jumbotron class="bg-image mb-0">
-      <b-container>
+      <b-container class="intro-text">
         <h1 class="display-3">PotsdamLokal - Einkaufen</h1>
-        <p class="lead">Unterstütze jetzt den lokalen Einzelhandel in Potsdam!</p>
-        <h3>In Zeiten von Covid19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in Kontakt treten und Zeitslots zum Abholen der Produkte ausmachen oder euch Produkte liefern lassen</h3>
+        <p class="lead font-weight-bold">Unterstütze jetzt den lokalen Einzelhandel in Potsdam!</p>
+        <h3>In Zeiten von Covid-19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in Kontakt treten und Zeitslots zum Abholen der Produkte ausmachen oder euch Produkte liefern lassen</h3>
         <div class="text-center"/>
       </b-container>
     </b-jumbotron>
@@ -67,7 +67,7 @@ export default {
 }
 .select-shopping{
   padding: 50px;
-  background-color: #A0D0F8;
+  background-color: #78c0f5;
 }
 .select-shop {
   padding: 50px;
@@ -78,5 +78,13 @@ export default {
 }
 .intro-image{
   height: 25vh;
+}
+@media (max-width: 767px) {
+  .intro-text h1{
+    font-size: 40px;
+  }
+  .intro-text p, h3{
+    font-size: 18px !important;
+  }
 }
 </style>

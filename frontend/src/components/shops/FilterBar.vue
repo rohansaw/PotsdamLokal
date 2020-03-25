@@ -4,7 +4,9 @@
     class="sticky-top">
     <b-container class="full-height">
       <b-row>
-        <b-col id="filters">
+        <div
+          class="col-md-6"
+          id="filters">
           <div class="row">
             <div
               class="col-md-4 filter-item"
@@ -17,17 +19,6 @@
                 class="ml-auto"
                 icon="angle-down" />
             </div>
-            <!-- <div
-              class="col-md-4 filter-item"
-              @click="toggleFilterMenu('categories')">
-              <font-awesome-icon
-                class="icon-padded"
-                icon="heart" />
-              Kategorien
-              <font-awesome-icon
-                class="ml-auto"
-                icon="angle-down" />
-            </div> -->
             <div
               class="col-md-4 filter-item"
               @click="toggleFilterMenu('more')">
@@ -48,7 +39,7 @@
               Anwenden
             </div>
           </div>
-        </b-col>
+        </div>
         <searchBar/>
       </b-row>
     </b-container>
@@ -60,7 +51,6 @@
           <branchFilters
             v-if="selectedFilterMenu==='branches'"
             @changed="pushSelected($event)"/>
-          <categoryFilters v-if="selectedFilterMenu==='categories'"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
       </div>
@@ -117,11 +107,15 @@ export default {
   z-index: 19;
   background-color:  #FFF;
 }
+@media (max-width: 767px){
+  .sticky-top{
+    position: initial !important;
+  }
+}
 .filter-item{
   height: 48px;
   border-right: 1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
-  min-width: 180px;
   padding: 15px;
   font-weight: 800;
   display:flex;
