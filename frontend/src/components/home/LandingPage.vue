@@ -58,7 +58,9 @@
             </b-col>
           </b-row>
         </b-container>
-        <div id="Newest-container" class="text-center pt-5">
+        <div
+          id="Newest-container"
+          class="text-center pt-5">
           Hier Geschäfte die neu dabei sind
         </div>
       </div>

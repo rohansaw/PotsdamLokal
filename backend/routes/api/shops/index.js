@@ -10,6 +10,7 @@ router.use('/create', require('./create'))
 
 router.get('/', auth.optional, (req, res, next) => {
   const page = parseInt(req.query.page) || 1
+  console.log(req.query)
   const filters = JSON.parse(req.query.filters)
   console.log(page, filters)
 
