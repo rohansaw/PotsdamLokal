@@ -6,7 +6,7 @@ const ShopsSchema = new Schema({
   name: String,
   industries: [String],
   description: String,
-  adress: {
+  address: {
     plz: Number,
     street: String
   },

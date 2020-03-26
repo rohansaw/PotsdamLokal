@@ -66,7 +66,7 @@ export default {
         branch: '',
         categories: [],
         description: '',
-        adress: '',
+        address: '',
         delivers: false
       },
       show: true

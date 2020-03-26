@@ -5,15 +5,17 @@
     img-left
     class="mb-3 text-left project-item"
     @click="showDetail(id)">
-    <h4>{{ name }}</h4>
-    <p class="mb-2"> Lorem ipsum dolor sit amet,  aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...</p>
+    <h4>{{ shop.name }}</h4>
+    <p class="mb-2">
+      {{ shop.description }}
+    </p>
 
     <b-row>
       <b-col cols="9">
         <b-container>
           <b-row class="mb-2">
             <b-row>
-              <h5>Industry here</h5>
+              <h5>{{ ...(shop.industries) }}</h5>
             </b-row>
             <h5>Tags</h5>
             <tag :name="'Stifte'"/>
@@ -23,7 +25,7 @@
           </b-row>
         </b-container>
       </b-col>
-      <b-col class="text-right"><font-awesome-icon icon="map-marker-alt" />Stahnsdorferstraße 144B<br> 14482 Potsdam</b-col>
+      <b-col class="text-right"><font-awesome-icon icon="map-marker-alt" />{{ shop.address.street }}<br> {{ shop.address.plz }} Potsdam</b-col>
     </b-row>
   </b-card>
 </template>
@@ -38,10 +40,11 @@ export default {
     skillTag
   },
   props: {
-    name: {
-      type: String,
-      default: 'test'
+    shop: {
+      type: Object,
+      default: () => {}
     }
+
   },
   methods: {
     showDetail: function (id) {

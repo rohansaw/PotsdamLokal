@@ -21,7 +21,7 @@
         <shopItem
           v-for="shop in pageOfShops"
           :key="shop._id"
-          :name="shop.name"/>
+          :shop="shop"/>
         <pagination :pager="pager"/>
       </div>
     </b-container>

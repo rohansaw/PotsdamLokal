@@ -52,14 +52,14 @@
           </b-form-group>
 
           <b-form-group
-            id="form-adress"
+            id="form-address"
             label="Adresse"
             label-for="form-desc"
           >
             <b-col>
               <b-form-input
                 id="form-plz"
-                v-model="form.adress.plz"
+                v-model="form.address.plz"
                 type="number"
                 required
                 placeholder="PLZ..."
@@ -68,7 +68,7 @@
             <b-col>
               <b-form-input
                 id="form-straße"
-                v-model="form.adress.street"
+                v-model="form.address.street"
                 :maxlength="80"
                 required
                 placeholder="Straße und Hausnummer..."
@@ -121,7 +121,7 @@ export default {
         name: '',
         industries: [],
         description: '',
-        adress: {
+        address: {
           plz: null,
           street: ''
         },

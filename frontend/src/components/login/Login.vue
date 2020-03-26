@@ -4,7 +4,7 @@
     <b-form @submit="login">
       <b-form-input
         type="text"
-        placeholder="Emailadresse..."
+        placeholder="Emailaddresse..."
         name="email" /><br>
       <b-form-input
         placeholder="Passwort..."
