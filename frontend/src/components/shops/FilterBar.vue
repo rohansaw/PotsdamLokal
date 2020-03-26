@@ -92,7 +92,7 @@ export default {
 
     pushSelected (item) {
       if (this.search.industries.includes(item)) {
-        this.search.idustries.splice(this.search.industries.indexOf(item), 1)
+        this.search.industries.splice(this.search.industries.indexOf(item), 1)
       } else {
         this.search.industries.push(item)
       }

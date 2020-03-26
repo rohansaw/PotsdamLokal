@@ -16,12 +16,16 @@ router.get('/', auth.optional, (req, res, next) => {
 
   console.log(industries.map(industry => ({ industries: industry })))
   const pageSize = 15
-  Shops.find({ $or: industries.map(industry => ({ industries: industry })) })
+  let dbQuery = {}
+  if (industries.length > 0) {
+    dbQuery = { $or: industries.map(industry => ({ industries: industry })) }
+  }
+
+  Shops.find(dbQuery)
     .then((shops) => {
       const pager = paginate(shops.length, page, pageSize)
 
       const pageOfShops = shops.slice(pager.startIndex, pager.endIndex + 1)
-      console.log(shops, pageOfShops)
 
       return res.json({ pager, pageOfShops })
     })

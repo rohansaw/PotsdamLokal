@@ -9,7 +9,6 @@ export default {
   },
 
   getShopsPage (pageNumber, query) {
-    console.log(query)
     return Repository.get(`${resource}`, {
       params: {
         page: pageNumber,

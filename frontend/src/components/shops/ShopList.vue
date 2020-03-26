@@ -46,7 +46,11 @@ export default {
     return {
       pager: {},
       pageOfShops: [],
-      filters: {}
+      filters: {
+        industries: [],
+        categories: [],
+        text: ''
+      }
     }
   },
   watch: {
@@ -63,12 +67,9 @@ export default {
   methods: {
     async getShops () {
       const page = parseInt(this.pager.page) || 1
-      if (page !== this.pager.currentPage) {
-        const response = await shopsRepository.getShopsPage(page, this.filters)
-        console.log(response)
-        this.pager = response.pager
-        this.pageOfShops = response.pageOfShops
-      }
+      const response = await shopsRepository.getShopsPage(page, this.filters)
+      this.pager = response.data.pager
+      this.pageOfShops = response.data.pageOfShops
     },
 
     newSearch (filters) {
