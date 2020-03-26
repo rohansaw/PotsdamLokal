@@ -28,11 +28,16 @@ export default {
 .bg-image{
   border-radius: 0px;
   color: #ecf0f1;
-  height: 300px;
+  height: auto;
   background-color: #ED8182;
 }
-/* .selection-button{ */
-/*   color: #FFF !important; */
-/*   border-color: #FFF !important; */
-/* } */
+
+@media (max-width: 767px) {
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
 </style>

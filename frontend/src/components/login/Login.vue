@@ -1,17 +1,18 @@
 <template>
   <b-container class="text-center">
     <h2>Login</h2>
-    <form @submit="login">
-      <input
+    <b-form @submit="login">
+      <b-form-input
         type="text"
-        name="email" ><br>
-      <input
+        placeholder="Emailadresse..."
+        name="email" /><br>
+      <b-form-input
+        placeholder="Passwort..."
         type="password"
-        name="password" ><br>
-      <input
-        type="submit"
-        value="Login" >
-    </form>
+        name="password" /><br>
+      <b-button type="primary">Login</b-button>
+    </b-form>
+    <p class="mt-4">Noch nicht registriert? <router-link to="register">Jetzt registrieren</router-link></p>
   </b-container>
 </template>
 

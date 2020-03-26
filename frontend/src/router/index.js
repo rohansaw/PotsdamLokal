@@ -5,6 +5,7 @@ import Dashboard from '@/components/home/Dashboard'
 import StartPage from '@/views/StartPage'
 import ShopsOverview from '@/views/ShopsOverview'
 import ShopCreationForm from '@/components/shops/CreateShop'
+import Register from '@/components/login/Register'
 
 Vue.use(Router)
 const router = new Router({
@@ -23,6 +24,11 @@ const router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     },
     {
       path: '/dashboard',
