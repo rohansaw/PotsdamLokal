@@ -3,6 +3,7 @@
     <label
       :for="id"
       class="">
+      {{ name }}
       <input
         :id="id"
         type="checkbox"

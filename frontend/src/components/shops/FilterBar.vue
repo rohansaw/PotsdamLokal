@@ -10,7 +10,7 @@
           <div class="row">
             <div
               class="col-md-4 filter-item"
-              @click="toggleFilterMenu('branches')">
+              @click="toggleFilterMenu('industries')">
               <font-awesome-icon
                 class="icon-padded"
                 icon="pencil-ruler" />
@@ -48,8 +48,8 @@
         v-if="selectedFilterMenu!=''"
         class="dropdown-filters">
         <b-container>
-          <branchFilters
-            v-if="selectedFilterMenu==='branches'"
+          <industriesFilters
+            v-if="selectedFilterMenu==='industries'"
             @changed="pushSelected($event)"/>
           <moreFilters v-if="selectedFilterMenu==='more'"/>
         </b-container>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import branchFilters from './BranchFilters'
+import industriesFilters from './IndustriesFilters'
 import categoryFilters from './CategoryFilters'
 import moreFilters from './MoreFilters'
 import searchBar from './SearchBar'
@@ -69,14 +69,14 @@ export default {
     return {
       selectedFilterMenu: '',
       search: {
-        branches: [],
+        industries: [],
         categories: null,
         text: null
       }
     }
   },
   components: {
-    branchFilters,
+    industriesFilters,
     categoryFilters,
     moreFilters,
     searchBar
@@ -91,10 +91,10 @@ export default {
     },
 
     pushSelected (item) {
-      if (this.search.branches.includes(item)) {
-        this.search.branches.splice(this.search.branches.indexOf(item), 1)
+      if (this.search.industries.includes(item)) {
+        this.search.idustries.splice(this.search.industries.indexOf(item), 1)
       } else {
-        this.search.branches.push(item)
+        this.search.industries.push(item)
       }
     }
 
