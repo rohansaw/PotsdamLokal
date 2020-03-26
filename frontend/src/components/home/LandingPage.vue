@@ -3,7 +3,7 @@
     <b-jumbotron class="bg-image mb-0">
       <b-container class="intro-text">
         <h1 class="display-3">PotsdamLokal - Einkaufen</h1>
-        <p class="lead font-weight-bold">Unterstütze jetzt den lokalen Einzelhandel in Potsdam!</p>
+        <p class="lead font-weight-bold">Das lokale Einkaufs- & Liefernetzwerk in Potsdam!</p>
         <h3>In Zeiten von Covid-19 leidet der lokale Einzelhandel stark. Über PotsdamLokal könnt ihr jetzt online mit den Läden in Potsdam in Kontakt treten und Zeitslots zum Abholen der Produkte ausmachen oder euch Produkte liefern lassen</h3>
         <div class="text-center"/>
       </b-container>
@@ -16,7 +16,7 @@
           <router-link
             to="shops"
             class="selection-button"
-            tag="button">Für Käufer</router-link>
+            tag="button">Für Käufer:innen</router-link>
           <br><br><p>Du möchtest einkaufen? Durchsuche jetzt Läden in Potsdam</p>
           <img
             src="../../assets/shoppingCart.svg"
@@ -28,8 +28,8 @@
           <router-link
             to="create-shop"
             class="selection-button"
-            tag="button">Für Verkäufer</router-link>
-          <br><br><p>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt eine Seite für deinen Laden</p>
+            tag="button">Für Verkäufer:innen</router-link>
+          <br><br><p>Du hast ein Geschäft in Potsdam und möchtest deine Produkte online anbieten? Erstelle jetzt dauerhaft kostenlos eine Seite für deinen Laden</p>
           <img
             src="../../assets/shop.svg"
             class="intro-image">
@@ -42,7 +42,7 @@
               <img
                 src="../../assets/groceries.svg"
                 class="img-feature">
-              <p>Such online nach Geschäften in deiner Nähe und kaufe trotz der schwierigen Situation lokal ein. Bezahlen kannst du Kontaktlos online oder Bar bei der Übergabe</p>
+              <p>Such online nach Geschäften in deiner Nähe und kaufe trotz der schwierigen Situation lokal ein. Bezahlen kannst du kontaktlos online oder Bar bei der Übergabe</p>
             </b-col>
             <b-col>
               <img
@@ -93,11 +93,11 @@ export default {
 }
 .select-shopping{
   padding: 50px;
-  background-color: #78c0f5;
+  background-color: #a9d4f8;
 }
 .select-shop {
   padding: 50px;
-  background-color: #a9d4f8;
+  background-color: #B1D8F8;
 }
 #Info-container{
   min-height: 300px;

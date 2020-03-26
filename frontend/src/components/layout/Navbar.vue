@@ -13,19 +13,18 @@
         is-nav>
         <b-navbar-nav>
           <b-nav-item to="shops">Einkaufen</b-nav-item>
-          <b-nav-item to="create-shop">Anbieten</b-nav-item>
+          <b-nav-item to="create-shop">Verkaufen</b-nav-item>
+          <b-nav-item to="register-deliveryman">Ausliefern</b-nav-item>
           <b-nav-item to="faq">FAQ</b-nav-item>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-
           <b-navbar-nav v-if="authenticated">
-            <b-nav-item href="#">Chats</b-nav-item>
+            <b-nav-item href="#">Bestellungen</b-nav-item>
             <b-nav-item-dropdown
               text="Profil"
               right>
-              <b-dropdown-item href="#">Meine Projekte</b-dropdown-item>
+              <b-dropdown-item href="#">Meine Produkte</b-dropdown-item>
               <b-dropdown-item href="#">Einstellungen</b-dropdown-item>
               <b-dropdown-item href="#">Ausloggen</b-dropdown-item>
             </b-nav-item-dropdown>

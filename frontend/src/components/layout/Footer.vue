@@ -21,7 +21,7 @@
 <style>
 footer {
     min-height: 80px;
-    background-color: #78c0f5;
+    background-color: #B1D8F8;
 }
 .footer-text{
   font-weight: bold;
