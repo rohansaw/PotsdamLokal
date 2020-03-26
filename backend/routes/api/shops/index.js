@@ -9,7 +9,6 @@ router.use('/industries', require('./industries'))
 router.use('/create', require('./create'))
 
 router.get('/', auth.optional, (req, res, next) => {
-  console.log("asdasd")
   const page = parseInt(req.query.page) || 1
   const filters = JSON.parse(req.query.filters)
   console.log(page, filters)
