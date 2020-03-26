@@ -12,9 +12,9 @@
       <b-col cols="9">
         <b-container>
           <b-row class="mb-2">
-          <b-row>
-            <h5>Industry here</h5>
-          </b-row>
+            <b-row>
+              <h5>Industry here</h5>
+            </b-row>
             <h5>Tags</h5>
             <tag :name="'Stifte'"/>
             <tag :name="'Magazine'"/>

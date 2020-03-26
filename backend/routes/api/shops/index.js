@@ -10,16 +10,18 @@ router.use('/create', require('./create'))
 
 router.get('/', auth.optional, (req, res, next) => {
   const page = parseInt(req.query.page) || 1
-  console.log(req.query)
   const filters = JSON.parse(req.query.filters)
+  const { industries, categories, text } = filters
   console.log(page, filters)
 
+  console.log(industries.map(industry => ({ industries: industry })))
   const pageSize = 15
-  Shops.find({ $or: filters.map(filter => ({ industries: filter })) })
+  Shops.find({ $or: industries.map(industry => ({ industries: industry })) })
     .then((shops) => {
       const pager = paginate(shops.length, page, pageSize)
 
       const pageOfShops = shops.slice(pager.startIndex, pager.endIndex + 1)
+      console.log(shops, pageOfShops)
 
       return res.json({ pager, pageOfShops })
     })

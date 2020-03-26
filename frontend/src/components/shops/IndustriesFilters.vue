@@ -4,9 +4,9 @@
     <ul class="filtersList">
       <filterItem
         v-for="industry in industries"
-        :key="industry.value"
-        :id="industry.value"
-        :name="industry.text"
+        :key="industry"
+        :id="industry"
+        :name="industry"
         @input="$emit('changed', $event)"
       />
     </ul>

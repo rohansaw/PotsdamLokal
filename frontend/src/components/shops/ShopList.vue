@@ -3,7 +3,7 @@
     <filterbar @submit="newSearch($event)"/>
     <b-container class="shoplist">
       SelectedFilters: {{ filters }}
-      <div v-if="!pageOfProjects.length" >
+      <div v-if="!pageOfShops.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>
       <div v-else>
@@ -19,9 +19,9 @@
           </b-col>
         </b-row>
         <shopItem
-          v-for="project in pageOfProjects"
-          :key="project.id"
-          :name="project.title"/>
+          v-for="shop in pageOfShops"
+          :key="shop._id"
+          :name="shop.name"/>
         <pagination :pager="pager"/>
       </div>
     </b-container>
@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       pager: {},
-      pageOfProjects: [],
+      pageOfShops: [],
       filters: {}
     }
   },
@@ -64,9 +64,10 @@ export default {
     async getShops () {
       const page = parseInt(this.pager.page) || 1
       if (page !== this.pager.currentPage) {
-        const data = await shopsRepository.getShopsPage(page, this.filters)
-        this.pager = data.pager
-        this.pageOfProjects = data.pageOfProjects
+        const response = await shopsRepository.getShopsPage(page, this.filters)
+        console.log(response)
+        this.pager = response.pager
+        this.pageOfShops = response.pageOfShops
       }
     },
 
