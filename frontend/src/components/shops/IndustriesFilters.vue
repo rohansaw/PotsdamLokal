@@ -1,12 +1,12 @@
 <template>
-  <div id="BranchesFilters">
+  <div id="IndustriesFilters">
     Select All | Unselect All
     <ul class="filtersList">
       <filterItem
-        v-for="branch in branches"
-        :key="branch.value"
-        :id="branch.value"
-        :name="branch.text"
+        v-for="industry in industries"
+        :key="industry.value"
+        :id="industry.value"
+        :name="industry.text"
         @input="$emit('changed', $event)"
       />
     </ul>
@@ -21,13 +21,13 @@ const shopRepository = RepositoryFactory.get('shops')
 export default {
   data () {
     return {
-      branches: []
+      industries: []
     }
   },
   mounted () {
     shopRepository.getShopIndustries()
       .then(res => {
-        this.branches = res.data
+        this.industries = res.data
       })
       .catch(error => console.log(error))
   },
@@ -47,7 +47,7 @@ export default {
   column-count: 3;
   padding: 0px;
 }
-#BranchesFilters{
+#IndustriesFilters{
   padding: 20px 0px;
 }
 </style>
