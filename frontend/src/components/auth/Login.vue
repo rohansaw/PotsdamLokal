@@ -3,10 +3,12 @@
     <h2>Login</h2>
     <b-form @submit="login">
       <b-form-input
+        v-model="email"
         type="text"
         placeholder="Emailaddresse..."
         name="email" /><br>
       <b-form-input
+        v-model="password"
         placeholder="Passwort..."
         type="password"
         name="password" /><br>

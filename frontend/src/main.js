@@ -5,7 +5,7 @@ import App from './App'
 import BootstrapVue from 'bootstrap-vue'
 import Axios from 'axios'
 import router from './router'
-import store from './store'
+import store from './store/store'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,6 +19,12 @@ import {
   faTag
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.prototype.$http = Axios
+const token = localStorage.getItem('token')
+if (token) {
+  Vue.prototype.$http.defaults.headers.common['Authorization'] = token
+}
 
 Vue.use(BootstrapVue)
 library.add(
@@ -38,6 +44,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store: store,
   components: { App },
   template: '<App/>'
 })
