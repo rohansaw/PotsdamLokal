@@ -10,7 +10,8 @@ const ShopsSchema = new Schema({
     plz: Number,
     street: String
   },
-  delivers: Boolean
+  delivers: Boolean,
+  ownerMail: String
 })
 
 mongoose.model('Shops', ShopsSchema)

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/login/Login'
+import Login from '@/components/auth/Login'
 import Dashboard from '@/components/home/Dashboard'
 import StartPage from '@/views/StartPage'
 import ShopsOverview from '@/views/ShopsOverview'
-import ShopCreationForm from '@/components/shops/CreateShop'
-import Register from '@/components/login/Register'
+import Register from '@/components/auth/Register'
+import RegisterShop from '@/components/auth/RegisterShop'
+import SellPage from '@/views/SellOverview'
 
 Vue.use(Router)
 const router = new Router({
@@ -31,14 +32,19 @@ const router = new Router({
       component: Register
     },
     {
+      path: '/register-shop',
+      name: 'RegisterShop',
+      component: RegisterShop
+    },
+    {
       path: '/dashboard',
       name: 'Dashbaord',
       component: Dashboard
     },
     {
-      path: '/create-shop',
-      name: 'CreateShop',
-      component: ShopCreationForm
+      path: '/sell',
+      name: 'SellPage',
+      component: SellPage
     }
   ]
 })

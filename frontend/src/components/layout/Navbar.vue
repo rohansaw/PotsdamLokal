@@ -13,7 +13,7 @@
         is-nav>
         <b-navbar-nav>
           <b-nav-item to="shops">Einkaufen</b-nav-item>
-          <b-nav-item to="create-shop">Verkaufen</b-nav-item>
+          <b-nav-item to="sell">Verkaufen</b-nav-item>
           <b-nav-item to="register-deliveryman">Ausliefern</b-nav-item>
           <b-nav-item to="faq">FAQ</b-nav-item>
         </b-navbar-nav>

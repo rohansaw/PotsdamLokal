@@ -14,10 +14,9 @@
       <b-col cols="9">
         <b-container>
           <b-row class="mb-2">
-            <b-row>
-              <h5>{{ ...(shop.industries) }}</h5>
-            </b-row>
-            <h5>Tags</h5>
+            <h6>Branche: {{ ...(shop.industries) }}</h6>
+          </b-row>
+          <b-row>
             <tag :name="'Stifte'"/>
             <tag :name="'Magazine'"/>
             <tag :name="'Fair-Trade'"/>
@@ -32,12 +31,10 @@
 
 <script>
 import tag from './Tag'
-import skillTag from './CategoryTag'
 
 export default {
   components: {
-    tag,
-    skillTag
+    tag
   },
   props: {
     shop: {
@@ -56,8 +53,9 @@ export default {
 
 <style>
 .project-item{
-    height: 200px;
+    height: auto;
     overflow: hidden;
+    border: none;
 }
 img{
   height:200px;

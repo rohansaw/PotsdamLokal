@@ -5,8 +5,7 @@ const mongoose = require('mongoose')
 const Shops = mongoose.model('Shops')
 
 router.post('/', auth.optional, (req, res) => {
-  const { shop } = req.body
-  console.log(shop)
+  const shop = req.body
 
   if (!shop.name) {
     res.status(422).json({ errors: { name: 'is required' } })

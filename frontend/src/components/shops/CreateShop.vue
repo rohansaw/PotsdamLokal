@@ -4,14 +4,13 @@
 
     <b-jumbotron class="bg-image mb-0 text-center">
       <b-container>
-        <h1 class="mb-3">In nur wenigen Schritten zur eigenen PotsdamLokal Seite</h1>
+        <h1 class="mb-3">Beschreiben sie ihr Unternehmen</h1>
       </b-container>
     </b-jumbotron>
 
     <b-container class="mt-5 mb-5">
       <b-form
-        v-if="show"
-        @submit="onSubmit">
+        v-if="show">
         <div>
           <b-form-group
             id="form-name"
@@ -102,6 +101,7 @@
 
         <b-button
           type="submit"
+          @click="$emit('submit', form)"
           variant="primary">Seite erstellen</b-button>
 
       </b-form>
@@ -145,12 +145,6 @@ export default {
       .catch(error => console.log(error))
   },
   methods: {
-    onSubmit (evt) {
-      // Check max amount of Tags (maximal 100)
-      evt.preventDefault()
-      shopsRepository.postNewShop({ shop: this.form })
-    },
-
     makeTag (evt) {
       if (this.writingTag === false) {
         this.writingTag = true

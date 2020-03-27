@@ -6,7 +6,8 @@ const Users = mongoose.model('Users')
 
 // POST new user route (optional, everyone has access)
 router.post('/', auth.optional, (req, res, next) => {
-  const { body: { user } } = req
+  const user = req.body
+  
 
   if (!user.email) {
     return res.status(422).json({
@@ -25,7 +26,6 @@ router.post('/', auth.optional, (req, res, next) => {
   }
 
   const finalUser = new Users(user)
-
   finalUser.setPassword(user.password)
 
   return finalUser.save()

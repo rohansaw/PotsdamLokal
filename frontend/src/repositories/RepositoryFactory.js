@@ -1,7 +1,9 @@
 import ShopsRepository from './shopsRepository'
+import UsersRepository from './usersRepository'
 
 const repositories = {
-  shops: ShopsRepository
+  shops: ShopsRepository,
+  users: UsersRepository
 }
 
 export default {

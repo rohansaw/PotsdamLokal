@@ -21,7 +21,7 @@ export default {
     return Repository.get(`${resource}/industries`)
   },
 
-  postNewShop (form) {
+  registerShop (form) {
     return Repository.post(`${resource}/create`, form)
       .then(response => {
         console.log('Shop Added')
