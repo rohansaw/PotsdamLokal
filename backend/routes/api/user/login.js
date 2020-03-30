@@ -4,7 +4,7 @@ const auth = require('../../auth')
 
 // POST login route (optional, everyone has access)
 router.post('/', auth.optional, (req, res, next) => {
-  const { body: { user } } = req
+  const user = req.body
 
   if (!user.email) {
     return res.status(422).json({
@@ -22,7 +22,9 @@ router.post('/', auth.optional, (req, res, next) => {
     })
   }
 
+
   return passport.authenticate('local', { session: false }, (err, passportUser, info) => {
+    console.log(err,passportUser)
     if (err) {
       return next(err)
     }
@@ -30,7 +32,7 @@ router.post('/', auth.optional, (req, res, next) => {
     if (passportUser) {
       const user = passportUser
       user.token = passportUser.generateJWT()
-
+      
       return res.json({ user: user.toAuthJSON() })
     }
 

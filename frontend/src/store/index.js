@@ -32,6 +32,7 @@ export default new Vuex.Store({
         commit('auth_request')
         userRepository.login(user)
           .then(resp => {
+            console.log(resp.data)
             const token = resp.data.token
             const user = resp.data.user
             localStorage.setItem('token', token)

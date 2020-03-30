@@ -1,5 +1,4 @@
 import Repository from './Repository'
-import router from '../router'
 
 const resource = 'api/user'
 
@@ -8,6 +7,6 @@ export default {
     return Repository.post(`${resource}/register`, form)
   },
   login (user) {
-    return Repository.get(`${resource}/login`, user)
+    return Repository.post(`${resource}/login`, user)
   }
 }

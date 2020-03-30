@@ -20,6 +20,8 @@
 
 <script>
 import router from '../../router'
+import store from '../../store'
+
 export default {
   data () {
     return {
@@ -29,11 +31,15 @@ export default {
   },
   name: 'Login',
   methods: {
-    login: (e) => {
-      e.preventDefault()
-      this.$store.dispatch('login', {email: this.email, password: this.password})
+    login (e) {
+      const data = {
+        email: this.email,
+        password: this.password
+      }
+      store.dispatch('login', data)
         .then(() => router.push('/'))
         .catch(err => console.log(err))
+      return false
     }
   }
 }

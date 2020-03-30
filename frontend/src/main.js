@@ -5,7 +5,7 @@ import App from './App'
 import BootstrapVue from 'bootstrap-vue'
 import Axios from 'axios'
 import router from './router'
-import store from './store/store'
+import store from './store'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -44,7 +44,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  store: store,
+  store,
   components: { App },
   template: '<App/>'
 })
