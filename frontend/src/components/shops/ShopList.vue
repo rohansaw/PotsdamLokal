@@ -2,7 +2,6 @@
   <div id="ShopList">
     <filterbar @submit="newSearch($event)"/>
     <b-container class="shoplist">
-      SelectedFilters: {{ filters }}
       <div v-if="!pageOfShops.length" >
         <h5>Zurzeit leider keine Läden, die zur deiner Suche passen :(</h5>
       </div>

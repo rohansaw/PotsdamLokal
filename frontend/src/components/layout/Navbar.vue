@@ -42,9 +42,8 @@
 </template>
 
 <script>
-//import store from '../../store'
-import RepositoryFactory from '../../repositories/RepositoryFactory'
-console.log(RepositoryFactory)
+import store from '../../store'
+
 export default {
   data: function () {
     return {
@@ -53,7 +52,7 @@ export default {
   },
   computed: {
     isUserLoggedIn () {
-      return //store.isLoggedIn
+      return store.getters.isLoggedIn
     }
   }
 }

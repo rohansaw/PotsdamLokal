@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import RepositoryFactory from '../repositories/RepositoryFactory'
-console.log(RepositoryFactory)
-
-const userRepository = RepositoryFactory.get('users')
 
 Vue.use(Vuex)
 
@@ -31,7 +27,7 @@ export default new Vuex.Store({
     login ({commit}, user) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
-        userRepository.login(user)
+        axios.post('http://localhost:3000/api/user/login', { user: user })
           .then(resp => {
             const token = resp.data.token
             const user = resp.data.user
