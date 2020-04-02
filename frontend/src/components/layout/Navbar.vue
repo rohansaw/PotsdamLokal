@@ -19,7 +19,7 @@
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">
-          <b-navbar-nav v-if="authenticated">
+          <b-navbar-nav v-if="isUserLoggedIn">
             <b-nav-item href="#">Bestellungen</b-nav-item>
             <b-nav-item-dropdown
               text="Profil"
@@ -42,10 +42,18 @@
 </template>
 
 <script>
+//import store from '../../store'
+import RepositoryFactory from '../../repositories/RepositoryFactory'
+console.log(RepositoryFactory)
 export default {
   data: function () {
     return {
       authenticated: false
+    }
+  },
+  computed: {
+    isUserLoggedIn () {
+      return //store.isLoggedIn
     }
   }
 }

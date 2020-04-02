@@ -4,7 +4,7 @@ const auth = require('../../auth')
 
 // POST login route (optional, everyone has access)
 router.post('/', auth.optional, (req, res, next) => {
-  const user = req.body
+  const { body: { user } } = req
 
   if (!user.email) {
     return res.status(422).json({
@@ -21,7 +21,6 @@ router.post('/', auth.optional, (req, res, next) => {
       }
     })
   }
-
 
   return passport.authenticate('local', { session: false }, (err, passportUser, info) => {
     console.log(err,passportUser)

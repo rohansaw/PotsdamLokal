@@ -7,6 +7,6 @@ export default {
     return Repository.post(`${resource}/register`, form)
   },
   login (user) {
-    return Repository.post(`${resource}/login`, user)
+    return Repository.post(`${resource}/login`, { user: user })
   }
 }

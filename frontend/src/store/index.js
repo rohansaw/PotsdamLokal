@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import RepositoryFactory from '../repositories/RepositoryFactory'
+console.log(RepositoryFactory)
 
 const userRepository = RepositoryFactory.get('users')
 
@@ -32,7 +33,6 @@ export default new Vuex.Store({
         commit('auth_request')
         userRepository.login(user)
           .then(resp => {
-            console.log(resp.data)
             const token = resp.data.token
             const user = resp.data.user
             localStorage.setItem('token', token)
