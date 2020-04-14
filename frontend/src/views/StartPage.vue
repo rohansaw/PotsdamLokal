@@ -1,6 +1,6 @@
 <template>
   <div id="StartPage">
-    <dashboard v-if="authenticated"/>
+    <dashboard v-if="isUserLoggedIn"/>
     <landingpage v-else/>
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 import dashboard from '../components/home/Dashboard'
 import landingpage from '../components/home/LandingPage'
+import store from '../store/'
 
 export default {
   components: {
@@ -17,6 +18,11 @@ export default {
   data: function () {
     return {
       authenticated: false
+    }
+  },
+  computed: {
+    isUserLoggedIn () {
+      return store.getters.isLoggedIn
     }
   }
 }

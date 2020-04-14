@@ -37,8 +37,7 @@ export default {
         password: this.password
       }
       store.dispatch('login', data)
-        .then(() => router.push('/'))
-        .catch(err => console.log(err))
+      .then((res) => console.log("hier", res))
       return false
     }
   }
